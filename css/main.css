@@ -12,6 +12,10 @@ html, body {
 	height: 100%;
 }
 
+body {
+  margin-top: 30px;
+}
+
 h1 {
 	text-align:center;
 	margin-top: 4px;
@@ -94,6 +98,7 @@ header a {
   top: 22px;
   left: 5px;
   z-index: 15;
+  transition: all 0.3s ease-in-out;
 }
 
 #hamburger-button>span {
@@ -148,6 +153,10 @@ header a {
 #hamburger-button.clicked>span:nth-child(4) {
   top: 50%;
   width: 0%;
+}
+
+#hamburger-button.clicked {
+  left: 180px;
 }
 
 
