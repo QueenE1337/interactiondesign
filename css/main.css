@@ -244,7 +244,7 @@ header a {
 	color: white;
 	text-decoration: none;
 	padding: 15px 20px;
-	margin: 50px auto;
+	margin: 22px auto;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -393,4 +393,21 @@ footer {
 	font-size: 14px;
 	text-align: center;
 	margin-top: 60px;
+}
+
+
+/*accountHomePage*/
+
+.tabs{
+
+}
+
+.tabs > li{
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #ccc;
+}
+
+.tabs > li > a{
+	text-decoration: none;
 }
