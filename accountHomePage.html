@@ -10,34 +10,66 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
   <body>
-<div class="big_buttons">
-  <button class="big_button"> MY FEED </button><button class="big_button"> FAVORITES </button>
-</div>
+    <header>
 
-<ul class='tabs'>
-  <li><a href='#tab1'>Tab 1</a></li>
-  <li><a href='#tab2'>Tab 2</a></li>
-  <li><a href='#tab3'>Tab 3</a></li>
-</ul>
-<div id='tab1'>
-  <p>Hi, this is the first tab.</p>
-</div>
-<div id='tab2'>
-  <p>This is the 2nd tab.</p>
-</div>
-<div id='tab3'>
-  <p>And this is the 3rd tab.</p>
-</div>
+        <h2>Pharmaceutical Inc.</h2>
 
+        <a id="hamburger-button" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
 
-<h3> Welcome Elisabeth! </h3>
+        <nav>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Log in/register</a></li>
+          </ul>
+        </nav>
+
+    </header>
+    <!-- <div class="big_buttons">
+      <button class="big_button"> MY FEED </button><button class="big_button"> FAVORITES </button>
+    </div> -->
     <div id="site-container">
-      <div class="columncontainer">
+    <ul class='tabs'>
+      <li>
+        <a href='#tab1'> My Feed</a>
+      </li><li>
+        <a href='#tab2'>Favourites</a>
+      </li>
+    </ul>
+
+    <div id='tab1'>
+      <h3>Welcome</h3>
+      <img src="img/tääst.png" alt="">
+      <img src="img/tääst.png" alt="">
+
+      <p>Hi, this is the first tab.</p>
+
     </div>
+    <div id='tab2'>
+      <p>This is the 2nd tab.</p>
+    </div>
+
+    <h3> Welcome Elisabeth! </h3>
+
+
+      <div class="columncontainer">
       </div>
+    </div>
 
 
+    <script>
 
+    	document.getElementById("hamburger-button").addEventListener("click",function(){
+    	document.getElementById("hamburger-button").classList.toggle("clicked");
+    	document.querySelector("nav").classList.toggle("clicked");
+    	});
+
+    </script>
 
 
   </body>

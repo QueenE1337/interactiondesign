@@ -174,12 +174,12 @@ header a {
 
 /*      BUTTONS   */
 
-.big_button {
+/*.big_button {
 	box-sizing: border-box;
 	margin: 0 ;
 	font-size: 25px;
 	width: 50%;
-}
+}*/
 
 /*      BUTTONS end    */
 
@@ -187,9 +187,9 @@ header a {
 
 
 #site-container {
+	padding-top: 40px;
 	max-width: 800px;
 	margin: 0 auto;
-	padding: 33px 22px;
 	position: relative;
 
 	filter: blur(0px);
@@ -398,15 +398,34 @@ footer {
 /*accountHomePage*/
 
 .tabs{
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	padding-left: 0;
+}
+
+#tab1{
+	text-align: center;
+}
+
+#tab1 > img {
+	max-width: 150px;
 
 }
 
-.tabs > li{
+.tabs > li {
+	overflow: hidden;
+	margin:0;
 	list-style: none;
 	display: inline-block;
 	border: 1px solid #ccc;
+	width: 50%;
+	box-sizing: border-box;
+	clear: right;
+	padding: 5px 0;
 }
 
 .tabs > li > a{
 	text-decoration: none;
+	font-size: 20px;
 }
