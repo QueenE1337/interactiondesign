@@ -22,6 +22,8 @@ h1 {
 
 h2 {
 	font-weight: 500;
+
+
 }
 
 h3 {
@@ -153,7 +155,13 @@ header a {
 
 /*     HEADER end      */
 
-
+/*      BUTTONS */
+.big_button {
+	box-sizing: border-box;
+	margin: 0 ;
+	font-size: 25px;
+	width: 50%;
+}
 
 
 #site-container {
