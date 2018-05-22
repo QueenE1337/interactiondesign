@@ -31,10 +31,12 @@ h2 {
 h3 {
 	font-weight: 300;
 	line-height: 1.5;
+  text-align:center;
 }
 
 
 /*     HEADER start      */
+
 
 header {
   width: 100%;
@@ -89,6 +91,12 @@ header a {
 	font-size: 20px;
 	white-space: nowrap;
 }
+
+
+/*     HEADER end      */
+
+/*     HAMBURGER BUTTON start      */
+
 
 #hamburger-button {
   display: block;
@@ -160,9 +168,9 @@ header a {
 }
 
 
-/*     HEADER end      */
+/*     HAMBURGER BUTTON end      */
 
-
+/*     SITE CONTAINER start      */
 
 
 #site-container {
@@ -191,6 +199,31 @@ header a {
 	text-align: center;
 	font-weight: 300;
 }
+
+
+/*     SITE CONTAINER end      */
+
+/*     BOXES WITH INFORMATION start      */
+
+.boxContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.box {
+  width: 50%;
+  height: 100px;
+  background-color: #ddd;
+  box-sizing: border-box;
+  float: left;
+  border: 3px solid white;
+}
+
+
+/*     BOXES WITH INFORMATION end     */
+
+
 
 .button {
 	background: #BD538A;
