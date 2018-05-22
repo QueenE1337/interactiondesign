@@ -26,6 +26,8 @@ h1 {
 
 h2 {
 	font-weight: 500;
+
+
 }
 
 h3 {
@@ -168,9 +170,21 @@ header a {
 }
 
 
+<<<<<<< HEAD
 /*     HAMBURGER BUTTON end      */
 
 /*     SITE CONTAINER start      */
+=======
+/*     HEADER end      */
+
+/*      BUTTONS */
+.big_button {
+	box-sizing: border-box;
+	margin: 0 ;
+	font-size: 25px;
+	width: 50%;
+}
+>>>>>>> origin/master
 
 
 #site-container {
