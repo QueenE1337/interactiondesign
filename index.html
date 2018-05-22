@@ -11,6 +11,21 @@
   </head>
   <body>
 
+    <header>
+
+        <h2>Pharmaceutical Inc.</h2>
+
+        <a id="hamburger-button" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+    </header>
+
+
+
     <div id="site-container">
 
 			<p>Welcome to</p>
@@ -74,3 +89,13 @@
 
   </body>
 </html>
+
+
+<script>
+
+	document.getElementById("hamburger-button").addEventListener("click",function(){
+	document.getElementById("hamburger-button").classList.toggle("clicked");
+	document.querySelector("nav").classList.toggle("clicked");
+	});
+
+</script>

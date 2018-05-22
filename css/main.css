@@ -29,6 +29,86 @@ h3 {
 	line-height: 1.5;
 }
 
+
+/*     HEADER start      */
+
+header {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+
+#hamburger-button {
+  display: block;
+  width: 28px;
+  height: 20px;
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  z-index: 15;
+}
+
+#hamburger-button>span {
+  position: absolute;
+  border-radius: 20px;
+  height: 20%;
+  background: #222327;
+  top: 0px;
+}
+
+#hamburger-button>span:nth-child(1) {
+  width: 100%;
+  top: 0%;
+  transition: top 0.1s ease-in, width 0.1s ease 0.1s;
+}
+
+#hamburger-button>span:nth-child(2) {
+  width: 95%;
+  top: 50%;
+  transition: all 0.1s ease-in;
+  transition-delay: 0.15s;
+}
+
+#hamburger-button>span:nth-child(3) {
+  width: 95%;
+  top: 50%;
+  transition: all 0.1s ease-in;
+  transition-delay: 0.15s;
+}
+
+#hamburger-button>span:nth-child(4) {
+  width: 95%;
+  top: 100%;
+  transition: top 0.1s ease-in, width 0.1s ease 0.1s;
+}
+
+#hamburger-button.clicked>span:nth-child(1) {
+  top: 50%;
+  width: 0%;
+}
+
+#hamburger-button.clicked>span:nth-child(2) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+#hamburger-button.clicked>span:nth-child(3) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+#hamburger-button.clicked>span:nth-child(4) {
+  top: 50%;
+  width: 0%;
+}
+
+
+/*     HEADER end      */
+
+
+
+
 #site-container {
 	max-width: 800px;
 	margin: 0 auto;
