@@ -170,21 +170,20 @@ header a {
 }
 
 
-<<<<<<< HEAD
-/*     HAMBURGER BUTTON end      */
+/*     HAMBURGER end      */
 
-/*     SITE CONTAINER start      */
-=======
-/*     HEADER end      */
+/*      BUTTONS   */
 
-/*      BUTTONS */
 .big_button {
 	box-sizing: border-box;
 	margin: 0 ;
 	font-size: 25px;
 	width: 50%;
 }
->>>>>>> origin/master
+
+/*      BUTTONS end    */
+
+/*      SITE CONTAINER start    */
 
 
 #site-container {
