@@ -219,7 +219,7 @@ header a {
 			}
 
 #modal {
-	width: 500px;
+	min-width: 300px;
 	height: auto;
 	padding: 20px;
 	overflow: hidden;
