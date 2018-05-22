@@ -355,3 +355,20 @@ footer {
 	text-align: center;
 	margin-top: 60px;
 }
+
+
+/*accountHomePage*/
+
+.tabs{
+
+}
+
+.tabs > li{
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #ccc;
+}
+
+.tabs > li > a{
+	text-decoration: none;
+}
