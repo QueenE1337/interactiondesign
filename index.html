@@ -3,10 +3,73 @@
   <head>
     <meta charset="utf-8">
     <title>Interaction Design Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/main.js"></script>
   </head>
   <body>
 
-    <h1>Best Project ever</h1>
+    <div id="site-container">
+
+			<p>Welcome to</p>
+			<h1>Awesome Newsletters</h1>
+			<p>all emails, all the time!</p>
+			<h3>Do you keep hearing about all these people being mad about getting to many newsletters?
+				They don't have time to read them?
+				Are you ashamed to say that you DON'T get any newsletters?
+				That you really want to but you rarely get any emails at all?</h3>
+			<p>Well, let us help you! <a href="#">Sign Up</a> and we'll send you more newsletters
+					than you realized there ever were! We will send you newsletters every minute of every hour of every day"
+					What are the newsletters about you ask? Well, you shouldn't - getting them is what's important!</p>
+			<p>So stop worring, stop being ashamed of your lack of stuffed Inbox and start getting annoying newsletters all day!</p>
+			<a href="#" class="button big open-modal">SIGN UP RIGHT AWAY!</a>
+
+		</div>
+
+
+		<div class="modal-container">
+
+			<div id="modal">
+
+				<h2>Sign up to Awesome Newsletters!</h2>
+				<img src="img/check.png"/> <p>The best newsletters in town!</p>
+				<img src="img/check.png"/> <p>Get more newsletters than you'll have time to care about!</p>
+
+				<form>
+					<label>
+						Name
+						<input type="text" name="Name" required="required"/>
+					</label>
+
+					<label>
+						Email address
+						<input type="email" name="Email" required="required" id="username"/>
+					</label>
+
+					<label>
+						<input id="checkBox" type="checkbox" value="" id="checkbox"> Add an extra email
+					</label>
+
+					<div class="addEmail">
+						<label>
+							Additional email address
+							<input type="email" name="Email" tabindex="-1"/>
+						</label>
+
+						<label>
+							Additional email address
+							<input type="email" name="Email" tabindex="-1"/>
+						</label>
+					</div>
+
+					<input type="submit" value="SIGNUP"/>
+				</form>
+
+				<a href="#" class="cancel">x</a>
+
+			</div>
+		</div>
 
   </body>
 </html>
