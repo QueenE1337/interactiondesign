@@ -12,10 +12,6 @@ html, body {
 	height: 100%;
 }
 
-body {
-  margin-top: 30px;
-}
-
 h1 {
 	text-align:center;
 	margin-top: 4px;
@@ -41,7 +37,6 @@ h3 {
 
 /*     HEADER start      */
 
-
 header {
   width: 100%;
   height: auto;
@@ -52,6 +47,8 @@ header {
   right: 0;
   background-color: #b2e5ff;
   z-index: 10;
+	opacity: 1;
+	transition: opacity 0.2s ease-out;
 }
 
 header nav {
@@ -185,11 +182,13 @@ header a {
 
 /*      BUTTONS end    */
 
+
+
 /*      SITE CONTAINER start    */
 
 
 #site-container {
-	padding-top: 40px;
+	padding-top: 60px;
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
@@ -205,8 +204,14 @@ header a {
 			body.modal-showing #site-container {
 				filter: blur(10px);
 			}
-			body.modal-showing.closing #site-container {
+			body.modal-showing header {
+				opacity: 0;
+			}
+			body.modal-showing.closing #site-container, body.modal-showing.closing header {
 				filter: blur(0px);
+			}
+			body.modal-showing.closing header {
+				opacity: 1;
 			}
 
 #site-container p {
@@ -218,7 +223,7 @@ header a {
 
 /*     SITE CONTAINER end      */
 
-/*     BOXES WITH INFORMATION start      */
+/*     BOXES (news/events/e-learning) WITH INFORMATION start      */
 
 .boxContainer {
   width: 100%;
@@ -251,6 +256,9 @@ header a {
 	transform: translate(-50%, -50%);
 }
 
+
+/*     LOGIN MODAL start     */
+
 .modal-container {
 	background-color: rgba(0, 0, 0, 0.8);
 	position: fixed;
@@ -277,7 +285,7 @@ header a {
 
 #modal {
 	min-width: 300px;
-	height: auto;
+	height: 450px;
 	padding: 20px;
 	overflow: hidden;
 	background-color: white;
@@ -320,6 +328,12 @@ header a {
 	margin-right: 10px;
 }
 
+/*     LOGIN MODAL end     */
+
+
+
+/*     FORM DESIGN start     */
+
 form {
 	border-top: 2px solid #dbdbdb;
 	margin-top: 20px;
@@ -340,6 +354,7 @@ label + label {
 
 input[type='text'],
 input[type='email'],
+input[type='password'],
 select {
   display: block;
   width: 100%;
@@ -359,23 +374,11 @@ input[type="submit"] {
 	margin: 20px 0px;
 }
 
-.addEmail {
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
-}
+/*     FORM DESIGN end     */
 
-.addEmail.show {
-	max-height: 170px;
-}
 
-.addEmail label:first-child {
-	margin-top: 18px;
-}
 
-input[type='checkbox']:checked {
-	background-color: black;
-}
+/*     CANCEL ( X ) BUTTON start     */
 
 .cancel {
 	background-color: black;
@@ -388,6 +391,11 @@ input[type='checkbox']:checked {
 	text-decoration: none;
 }
 
+/*     CANCEL ( X ) BUTTON end     */
+
+
+/*     FOOTER start     */
+
 footer {
 	background-color: #b2e5ff;
 	padding: 5%;
@@ -395,6 +403,9 @@ footer {
 	text-align: center;
 	margin-top: 80px;
 }
+
+/*     FOOTER end    */
+
 
 
 /*accountHomePage*/
