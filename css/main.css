@@ -207,7 +207,7 @@ header a {
 			body.modal-showing header {
 				opacity: 0;
 			}
-			body.modal-showing.closing #site-container, body.modal-showing.closing header {
+			body.modal-showing.closing #site-container {
 				filter: blur(0px);
 			}
 			body.modal-showing.closing header {
@@ -222,6 +222,8 @@ header a {
 
 
 /*     SITE CONTAINER end      */
+
+
 
 /*     BOXES (news/events/e-learning) WITH INFORMATION start      */
 
@@ -250,10 +252,6 @@ header a {
 	color: white;
 	text-decoration: none;
 	padding: 15px 20px;
-	margin: 22px auto;
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 
@@ -331,6 +329,80 @@ header a {
 /*     LOGIN MODAL end     */
 
 
+/*     REGISTER POP UP start     */
+
+.register-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-out;
+
+	will-change: opacity;
+	transform: translateZ(0);
+}
+
+			body.register-showing .register-container {
+				opacity: 1;
+				visibility: visible;
+			}
+			body.register-showing.closing .register-container {
+				opacity: 0;
+			}
+
+#register {
+	min-width: 300px;
+	height: 450px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+
+
+	transition: top 0.2s ease-out, transform 0.2s ease-out;
+
+	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
+	transform: translate(-50%, -50%)
+				translateZ(0)
+				scale(0.9)
+				rotateX(60deg);
+
+	/* Getting the GPU to handle it - the NEW way */
+	will-change: top, transform;
+}
+
+			body.register-showing .register-container #register {
+					top: 50%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(1) /* zoom in to scale 1:1 */
+					   	   	   rotateX(0);
+			}
+			body.register-showing.closing .register-container #register {
+					top: 45%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(0.9) /* zoom in to scale 1:1 */
+					   	   	   rotateX(60deg);
+			}
+
+#register img {
+	width: 20px;
+	float: left;
+	margin-right: 10px;
+}
+
+/*     REGISTER POP UP end     */
+
+
+
 
 /*     FORM DESIGN start     */
 
@@ -366,7 +438,7 @@ select {
 }
 
 input[type="submit"] {
-	background: #BD538A;
+	background: #0077b2;
 	color: white;
 	text-decoration: none;
 	font-size: 16px;

@@ -3,30 +3,24 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 
 $(document).ready(function() {
 
-	  $(":checkbox").click(function(event) {
-	    if ($(this).is(":checked")) {
-	      $(".addEmail").addClass("show");
-				$(".addEmail input").removeAttr("tabindex");
-	    } else
-	      $(".addEmail").removeClass("show");
-	  });
 
 
-
-
-	// Open the modal by adding class to <body> and use CSS- to change things when body has that class
+	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
 		e.preventDefault();
 
 		$("body").addClass("modal-showing");
-
-		//Add a FOCUS on input field.
-		$(this).find("input, a").eq(0).trigger("focus");
 	});
 
-	// CLOSE modal by removing the class from <body>
-	// 1. click on the cancel-button
-	// 2. click on the modal container
+	// Open register pop-up on click
+	$("a.openRegister").on("click", function(e) {
+		e.preventDefault();
+
+		$("body").addClass("register-showing");
+	});
+
+
+	// CLOSE LOGIN MODAL ON CANCEL ( X )
 	$(".modal-container, #modal .cancel").on("click", function(e) {
 		e.preventDefault();
 
@@ -40,10 +34,30 @@ $(document).ready(function() {
 		});
 	})
 
+	//REMOVING REGISTER ON CANCEL ( X )
+	$(".register-container, #register .cancel").on("click", function(e) {
+		e.preventDefault();
+
+		$("body").addClass("closing");
+
+
+		$(".register-container #register").one(transEnd, function() {
+
+			$("body").removeClass("register-showing closing");
+			$(this).off(transEnd);
+		});
+	})
+
+
 	// but NOT on clicks in the modal (=prevent "bubbling")
 	$("#modal").on("click", function(e) {
 		e.stopPropagation();
 	});
+
+	$("#register").on("click", function(e) {
+		e.stopPropagation();
+	});
+
 
 
 // FUNTIONALITY FOR THE TABS BELOW!!
