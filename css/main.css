@@ -188,7 +188,7 @@ header a {
 
 
 #site-container {
-	padding-top: 60px;
+	padding-top: 70px;
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
@@ -493,10 +493,58 @@ footer {
 	text-align: center;
 }
 
-#tab1 > img {
-	max-width: 150px;
+
+/*Right column--------------------*/
+
+#tab1 > .columnRight{
+	width: 50%;
+	float: right;
 
 }
+
+#tab1 > .columnRight > .contentHolderBox{
+	margin-left: 1.5%;
+	margin-right:2%;
+	margin-bottom: 5px;
+	width: 96.5%;
+	padding: 0 3%;
+	background-color: #ccc;
+}
+
+#tab1 > .columnRight > .contentHolderBox > img {
+	width: 100%;
+}
+
+
+/*Left column--------------------*/
+
+#tab1 > .columnLeft{
+	width: 50%;
+	float: left;
+
+}
+
+#tab1 > .columnLeft > .contentHolderBox{
+	margin-left: 2%;
+	margin-right: 1.5%;
+	margin-bottom: 5px;
+	padding: 0 3%;
+	width: 96.5%;
+	background-color: #ccc;
+
+}
+
+#tab1 > .columnLeft > .contentHolderBox > img {
+	width: 100%;
+
+}
+
+.contentHolderBox > h3{
+	font-size: 18px;
+}
+
+
+
 
 .tabs > li {
 	overflow: hidden;
