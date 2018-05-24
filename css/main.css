@@ -252,6 +252,8 @@ header a {
 	color: white;
 	text-decoration: none;
 	padding: 15px 20px;
+	margin: 15px 5px 0px 0px;
+	float: left;
 }
 
 
@@ -326,6 +328,27 @@ header a {
 	margin-right: 10px;
 }
 
+.errormessage {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	overflow: hidden;
+}
+
+.errormessage > p {
+	margin: 0;
+	color: #e00b0b;
+}
+
+*[required].error {
+	background-color: #f2e6e6;
+	border-color: #e00b0b;
+	color: #e00b0b;
+}
+
+*[required].error + .errormessage {
+	max-height: 25px;
+}
+
 /*     LOGIN MODAL end     */
 
 
@@ -362,12 +385,13 @@ header a {
 			}
 
 #register {
-	min-width: 300px;
+	width: 300px;
 	height: 450px;
 	padding: 20px;
 	overflow: hidden;
 	background-color: white;
 	position: absolute;
+	position: relative;
   top: 50%;
   left: 50%;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
@@ -400,11 +424,22 @@ header a {
 					   	   	   rotateX(60deg);
 			}
 
-#register img {
-	width: 20px;
-	float: left;
-	margin-right: 10px;
+
+#inputContainer {
+	width: 300%;
+	height: 450px;
+	position: absolute;
+	left: 0;
+	transition: all 0.2s ease-out;
 }
+
+section {
+	width: 33.333%;
+	padding: 10px;
+	float: left;
+	box-sizing: border-box;
+}
+
 
 /*     REGISTER POP UP end     */
 
@@ -434,6 +469,7 @@ label + label {
 input[type='text'],
 input[type='email'],
 input[type='password'],
+input[type='number'],
 select {
   display: block;
   width: 100%;
@@ -455,6 +491,28 @@ input[type="submit"] {
 
 /*     FORM DESIGN end     */
 
+
+/*     NEXT & BACK buttonzzz start     */
+
+#register.step2 #inputContainer {
+	left: -100%;
+}
+
+#register.step3 #inputContainer {
+	left: -200%;
+}
+
+#register.back-step1 #inputContainer {
+	left: 0;
+}
+
+#register.back-step2 #inputContainer {
+	left: -100%;
+}
+
+
+
+/*     NEXT & BACK buttonzzz end     */
 
 
 /*     CANCEL ( X ) BUTTON start     */
@@ -609,4 +667,14 @@ margin: 0 auto;
 max-width: 22px;
 height: auto;
 float: right;
+}
+
+/* BREADCRUMBS */
+#bread-crumbs {
+	 margin: 10px 0px 10px 30px;
+}
+#bread-crumbs p {
+	display: inline;
+	font-size: 12px;
+	padding-left: 3px;
 }

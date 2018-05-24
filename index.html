@@ -27,7 +27,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">About us</a></li>
-            <li><a id="loginmenulink" href="#">Log in/register</a></li>
+            <li><a class="open-modal" href="#">Log in/register</a></li>
           </ul>
         </nav>
 
@@ -61,15 +61,21 @@
 
 				<h2>Log in</h2>
 
-				<form>
+				<form id="loginform" novalidate="novalidate">
 					<label>
 						Username
 						<input type="text" name="Name" required="required"/>
+            <div class="errormessage">
+              <p>Please type your username</p>
+            </div>
 					</label>
 
 					<label>
 						Password
 						<input type="password" name="Password" required="required"/>
+            <div class="errormessage">
+              <p>Please type your password</p>
+            </div>
 					</label>
 
 					<input type="submit" value="LOG IN"/>
@@ -84,25 +90,111 @@
 
     <div class="register-container">
       <div id="register">
-        <h2>Register</h2>
+          <div id="inputContainer">
 
-        <form>
-          <label>
-            Username
-            <input type="text" name="Name" required="required"/>
-          </label>
+            <section id="firststep">
+              <h2>Register</h2>
+              <form>
+                <label>
+                  Firstname
+                  <input type="text" name="firstname" required="required" tabindex="-1"/>
+                </label>
 
-          <label>
-            Password
-            <input type="password" name="Password" required="required"/>
-          </label>
+                <label>
+                  Lastname
+                  <input type="text" name="lastname" required="required" tabindex="-1"/>
+                </label>
 
-          <a href="#" class="button" id="back">Back</a>
-          <a href="#" class="button" id="next">Next</a>
-        </form>
+                <a href="#" class="button" id="to-step2" tabindex="-1">Next →</a>
+              </section>
 
-        <a href="#" class="cancel">x</a>
+              <section id="secondstep">
+                <h2>Work</h2>
 
+                <label>
+                  Profession
+                  <select tabindex="-1">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Physiotherapist">Physiotherapist</option>
+                    <option value="themeaningoflife">The meaning of life</option>
+                  </select>
+
+                  <div id="doctor">
+                    <label>
+                      SV-number
+                      <input type="number" name="SV-number" required="required" tabindex="-1"/>
+                    </label>
+
+                    Speciality
+                    <select tabindex="-1">
+                      <option value="Doctor">Diabetes</option>
+                      <option value="Nurse">Babies</option>
+                      <option value="Physiotherapist">Sex</option>
+                      <option value="themeaningoflife">Kidney</option>
+                    </select>
+
+                    <label>
+                      City
+                      <input type="text" name="city" required="required" tabindex="-1"/>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input type="text" name="workplace" required="required" tabindex="-1"/>
+                    </label>
+                  </div>
+
+                  <div id="other">
+                    Speciality
+                    <select tabindex="-1">
+                      <option value="Doctor">Diabetes</option>
+                      <option value="Nurse">Babies</option>
+                      <option value="Physiotherapist">Sex</option>
+                      <option value="themeaningoflife">Kidney</option>
+                    </select>
+
+                    <label>
+                      City
+                      <input type="text" name="city" required="required" tabindex="-1"/>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input type="text" name="workplace" required="required" tabindex="-1"/>
+                    </label>
+                  </div>
+
+                  <a href="#" class="button" id="back-to-step1" tabindex="-1">← Back</a>
+                  <a href="#" class="button" id="to-step3" tabindex="-1">Next →</a>
+                </label>
+              </section>
+
+              <section id="thirdstep">
+                <h2>User Info</h2>
+
+                <label>
+      						Username
+      						<input type="text" name="username" required="required" tabindex="-1"/>
+      					</label>
+
+      					<label>
+      						Password
+      						<input type="password" name="passwordOne" required="required" tabindex="-1"/>
+      					</label>
+
+                <label>
+      						Repeat password
+      						<input type="password" name="passwordTwo" required="required" tabindex="-1"/>
+      					</label>
+
+                <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
+      					<input type="submit" value="SUBMIT" tabindex="-1"/>
+              </section>
+            </form>
+
+          </div>
+          <a href="#" class="cancel">x</a>
       </div>
     </div>
 
