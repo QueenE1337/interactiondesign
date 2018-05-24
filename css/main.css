@@ -496,6 +496,37 @@ footer {
 	padding-left: 0;
 }
 
+.tabs > a > li {
+	overflow: hidden;
+	margin:0;
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #000;
+	width: 50%;
+	box-sizing: border-box;
+	clear: right;
+	padding: 5px 0;
+	background-color: #cecece;
+	border-radius: 5% 5% 0 0;
+}
+
+.tabs > a{
+	text-decoration: none;
+	font-size: 20px;
+	color: #000;
+}
+
+.tabs > a.active{
+}
+
+.tabs > a.active > li{
+	padding: 6px 0;
+	background-color: #ffffff;
+	font-weight: bold;
+	border-bottom-style: none;
+}
+
+
 #tab1{
 	text-align: center;
 }
@@ -515,7 +546,6 @@ footer {
 	margin-bottom: 5px;
 	width: 96.5%;
 	padding: 0 3%;
-	background-color: #ccc;
 }
 
 #tab1 > .columnRight > .contentHolderBox > img {
@@ -537,7 +567,6 @@ footer {
 	margin-bottom: 5px;
 	padding: 0 3%;
 	width: 96.5%;
-	background-color: #ccc;
 
 }
 
@@ -546,26 +575,38 @@ footer {
 
 }
 
+.contentHolderBox{
+	background-color: #b2e5ff;
+}
+
 .contentHolderBox > h3{
 	font-size: 18px;
 }
 
+#tab2{
 
-
-
-.tabs > li {
-	overflow: hidden;
-	margin:0;
-	list-style: none;
-	display: inline-block;
-	border: 1px solid #ccc;
-	width: 50%;
-	box-sizing: border-box;
-	clear: right;
-	padding: 5px 0;
 }
 
-.tabs > li > a{
+#tab2 > ul{
+padding: 0;
+width: 96.5%;
+margin: 0 auto;
+}
+
+#tab2 > ul > a > li{
+	border: solid 1px #000;
+	padding: 6px;
+	list-style: none;
+	margin-bottom: 8px;
+}
+
+#tab2 > ul > a{
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
+}
+
+#tab2 > ul > a > li > img{
+max-width: 22px;
+height: auto;
+float: right;
 }

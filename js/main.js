@@ -106,3 +106,8 @@ $(document).ready(function() {
 
 
 });
+
+
+
+//Features man kan ta med om man orkar/vill som höjer kvalitén!
+//		+Hämta inloggade avnändarens förnamn och displaya det som "Welcome: + $username"; (AJAX)
