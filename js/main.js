@@ -3,17 +3,12 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 
 $(document).ready(function() {
 
-	$("a#loginmenulink").on("click", function(e) {
-		e.preventDefault();
-
-		$("body").addClass("modal-showing");
-	});
-
 	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
 		e.preventDefault();
 
 		$("body").addClass("modal-showing");
+		$("nav, #hamburger-button").removeClass("clicked");
 	});
 
 	// Open register pop-up on click
@@ -29,6 +24,9 @@ $(document).ready(function() {
 	$(".modal-container, #modal .cancel").on("click", function(e) {
 		e.preventDefault();
 
+		var fields = $("#loginform").find("*[required]");
+		fields.removeClass("error");
+
 		$("body").addClass("closing");
 
 
@@ -42,7 +40,6 @@ $(document).ready(function() {
 	//REMOVING REGISTER ON CANCEL ( X )
 	$(".register-container, #register .cancel").on("click", function(e) {
 		e.preventDefault();
-
 		$("body").addClass("closing");
 
 
@@ -63,6 +60,57 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
+
+	//REGISTRATION Next & Back buttons
+	$("#to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("back-step1");
+		$("#register").addClass("step2");
+	})
+
+
+	$("#to-step3").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step2");
+		$("#register").addClass("step3");
+	})
+
+
+	$("#back-to-step1").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step2");
+		$("#register").addClass("back-step1");
+	})
+
+
+	$("#back-to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step3");
+		$("#register").addClass("back-step2");
+	})
+
+
+
+	// on change-event of <select>, do stuff:
+	$("#profession").change(function() {
+
+		// save the chosen value
+		var val = $(this).find("option:selected").attr("value");
+
+		// clear "show"-class first to make sure a change from "student" to another option = additional fields are hidden again
+		$(".doctor").removeClass("show");
+
+		// has the user shosen the option "student"?
+		if ( val=="Doctor") {
+
+			// yes, add class "show" and let special CSS for this show the hidden fields
+			$(".doctor").addClass("show");
+		}
+	});
 
 
 // FUNTIONALITY FOR THE TABS BELOW!!
@@ -104,5 +152,43 @@ $(document).ready(function() {
   });
 });
 
+//Form validation
+
+$("#loginform").submit( function(e) {
+	var postform = true;
+	var fields = $(this).find("*[required]");
+
+	fields.removeClass("error");
+
+	fields.each(function() {
+		var type = $(this).attr("type");
+		var val = $(this).val();
+
+		if (type == "text") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		} else if (type == "password") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		}
+	});
+	if (!postform) {
+		e.preventDefault();
+	}
+});
+
+function validateEmail(email) {
+var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+return re.test(String(email).toLowerCase());
+}
 
 });
+
+
+
+//Features man kan ta med om man orkar/vill som höjer kvalitén!
+//		+Hämta inloggade avnändarens förnamn och displaya det som "Welcome: + $username"; (AJAX)

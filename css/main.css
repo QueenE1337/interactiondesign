@@ -252,6 +252,8 @@ header a {
 	color: white;
 	text-decoration: none;
 	padding: 15px 20px;
+	margin: 15px 5px 0px 0px;
+	float: left;
 }
 
 
@@ -326,6 +328,27 @@ header a {
 	margin-right: 10px;
 }
 
+.errormessage {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	overflow: hidden;
+}
+
+.errormessage > p {
+	margin: 0;
+	color: #e00b0b;
+}
+
+*[required].error {
+	background-color: #f2e6e6;
+	border-color: #e00b0b;
+	color: #e00b0b;
+}
+
+*[required].error + .errormessage {
+	max-height: 25px;
+}
+
 /*     LOGIN MODAL end     */
 
 
@@ -362,12 +385,13 @@ header a {
 			}
 
 #register {
-	min-width: 300px;
+	width: 300px;
 	height: 450px;
 	padding: 20px;
 	overflow: hidden;
 	background-color: white;
 	position: absolute;
+	position: relative;
   top: 50%;
   left: 50%;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
@@ -400,11 +424,22 @@ header a {
 					   	   	   rotateX(60deg);
 			}
 
-#register img {
-	width: 20px;
-	float: left;
-	margin-right: 10px;
+
+#inputContainer {
+	width: 300%;
+	height: 450px;
+	position: absolute;
+	left: 0;
+	transition: all 0.2s ease-out;
 }
+
+section {
+	width: 33.333%;
+	padding: 10px;
+	float: left;
+	box-sizing: border-box;
+}
+
 
 /*     REGISTER POP UP end     */
 
@@ -434,6 +469,7 @@ label + label {
 input[type='text'],
 input[type='email'],
 input[type='password'],
+input[type='number'],
 select {
   display: block;
   width: 100%;
@@ -455,6 +491,59 @@ input[type="submit"] {
 
 /*     FORM DESIGN end     */
 
+
+/*     SELECTION IN DROP DOWN MENU start     */
+
+.doctor {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.doctor.show {
+	max-height: 215px;
+}
+
+.doctor label {
+	margin-top: 8px;
+}
+
+.doctor label:nth-child(1){
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.other {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.other.show {
+	max-height: 170px;
+}
+
+/*     SELECTION IN DROP DOWN MENU end    */
+
+
+/*     NEXT & BACK buttonzzz start     */
+
+#register.step2 #inputContainer {
+	left: -100%;
+}
+
+#register.step3 #inputContainer {
+	left: -200%;
+}
+
+#register.back-step1 #inputContainer {
+	left: 0;
+}
+
+#register.back-step2 #inputContainer {
+	left: -100%;
+}
+
+
+/*     NEXT & BACK buttonzzz end     */
 
 
 /*     CANCEL ( X ) BUTTON start     */
@@ -496,6 +585,37 @@ footer {
 	padding-left: 0;
 }
 
+.tabs > a > li {
+	overflow: hidden;
+	margin:0;
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #000;
+	width: 50%;
+	box-sizing: border-box;
+	clear: right;
+	padding: 5px 0;
+	background-color: #cecece;
+	border-radius: 5% 5% 0 0;
+}
+
+.tabs > a{
+	text-decoration: none;
+	font-size: 20px;
+	color: #000;
+}
+
+.tabs > a.active{
+}
+
+.tabs > a.active > li{
+	padding: 6px 0;
+	background-color: #ffffff;
+	font-weight: bold;
+	border-bottom-style: none;
+}
+
+
 #tab1{
 	text-align: center;
 }
@@ -515,11 +635,6 @@ footer {
 	margin-bottom: 5px;
 	width: 96.5%;
 	padding: 0 3%;
-	background-color: #ccc;
-}
-
-#tab1 > .columnRight > .contentHolderBox > img {
-	width: 100%;
 }
 
 
@@ -537,37 +652,53 @@ footer {
 	margin-bottom: 5px;
 	padding: 0 3%;
 	width: 96.5%;
-	background-color: #ccc;
-
 }
 
-#tab1 > .columnLeft > .contentHolderBox > img {
-	width: 100%;
 
+.contentHolderBox{
+	background-color: #b2e5ff;
 }
 
-.contentHolderBox > h3{
+.contentHolderBox > a{
+	text-decoration: none;
+	color: #000000;
+	font-weight: bold;
+}
+
+.contentHolderBox > a > h3{
 	font-size: 18px;
 }
 
-
-
-
-.tabs > li {
-	overflow: hidden;
-	margin:0;
-	list-style: none;
-	display: inline-block;
-	border: 1px solid #ccc;
-	width: 50%;
-	box-sizing: border-box;
-	clear: right;
-	padding: 5px 0;
+.contentHolderBox > a > img {
+	width: 100%;
 }
 
-.tabs > li > a{
+#tab2{
+
+}
+
+#tab2 > ul{
+padding: 0;
+width: 96.5%;
+margin: 0 auto;
+}
+
+#tab2 > ul > a > li{
+	border: solid 1px #000;
+	padding: 6px;
+	list-style: none;
+	margin-bottom: 8px;
+}
+
+#tab2 > ul > a{
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
+}
+
+#tab2 > ul > a > li > img{
+max-width: 22px;
+height: auto;
+float: right;
 }
 
 /* BREADCRUMBS */
