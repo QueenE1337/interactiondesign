@@ -3,13 +3,12 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 
 $(document).ready(function() {
 
-
-
 	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
 		e.preventDefault();
 
 		$("body").addClass("modal-showing");
+		$("nav, #hamburger-button").removeClass("clicked");
 	});
 
 	// Open register pop-up on click
@@ -25,6 +24,9 @@ $(document).ready(function() {
 	$(".modal-container, #modal .cancel").on("click", function(e) {
 		e.preventDefault();
 
+		var fields = $("#loginform").find("*[required]");
+		fields.removeClass("error");
+
 		$("body").addClass("closing");
 
 
@@ -38,7 +40,6 @@ $(document).ready(function() {
 	//REMOVING REGISTER ON CANCEL ( X )
 	$(".register-container, #register .cancel").on("click", function(e) {
 		e.preventDefault();
-
 		$("body").addClass("closing");
 
 
@@ -133,5 +134,38 @@ $(document).ready(function() {
   });
 });
 
+//Form validation
+
+$("#loginform").submit( function(e) {
+	var postform = true;
+	var fields = $(this).find("*[required]");
+
+	fields.removeClass("error");
+
+	fields.each(function() {
+		var type = $(this).attr("type");
+		var val = $(this).val();
+
+		if (type == "text") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		} else if (type == "password") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		}
+	});
+	if (!postform) {
+		e.preventDefault();
+	}
+});
+
+function validateEmail(email) {
+var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+return re.test(String(email).toLowerCase());
+}
 
 });
