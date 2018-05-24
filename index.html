@@ -119,21 +119,23 @@
 
                 <label>
                   Profession
-                  <select tabindex="-1">
+                  <select required="required" id="profession" tabindex="-1">
+                    <option>Select something</option>
                     <option value="Doctor">Doctor</option>
                     <option value="Nurse">Nurse</option>
                     <option value="Physiotherapist">Physiotherapist</option>
                     <option value="themeaningoflife">The meaning of life</option>
                   </select>
 
-                  <div id="doctor">
+                  <div class="doctor">
                     <label>
                       SV-number
                       <input type="number" name="SV-number" required="required" tabindex="-1"/>
                     </label>
 
                     Speciality
-                    <select tabindex="-1">
+                    <select required="required" id="speciality" tabindex="-1">
+                      <option>Select something</option>
                       <option value="Doctor">Diabetes</option>
                       <option value="Nurse">Babies</option>
                       <option value="Physiotherapist">Sex</option>
@@ -151,9 +153,10 @@
                     </label>
                   </div>
 
-                  <div id="other">
+                  <div class="other">
                     Speciality
-                    <select tabindex="-1">
+                    <select required="required" id="speciality" tabindex="-1">
+                      <option>Select something</option>
                       <option value="Doctor">Diabetes</option>
                       <option value="Nurse">Babies</option>
                       <option value="Physiotherapist">Sex</option>
