@@ -386,7 +386,7 @@ header a {
 
 #register {
 	width: 300px;
-	height: 450px;
+	height: 540px;
 	padding: 20px;
 	overflow: hidden;
 	background-color: white;
@@ -394,6 +394,7 @@ header a {
 	position: relative;
   top: 50%;
   left: 50%;
+	z-index: 100
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
 
 
@@ -500,14 +501,14 @@ input[type="submit"] {
 	transition: max-height 0.2s ease-out;
 }
 .doctor.show {
-	max-height: 215px;
+	max-height: 290px;
 }
 
-.doctor label {
+.doctor label, .other label {
 	margin-top: 8px;
 }
 
-.doctor label:nth-child(1){
+.doctor label:nth-child(1), .other label:nth-child(1){
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
@@ -518,7 +519,8 @@ input[type="submit"] {
 	transition: max-height 0.2s ease-out;
 }
 .other.show {
-	max-height: 170px;
+	max-height: 210px;
+	margin-top: 8px;
 }
 
 /*     SELECTION IN DROP DOWN MENU end    */
