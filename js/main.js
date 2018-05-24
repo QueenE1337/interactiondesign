@@ -103,14 +103,23 @@ $(document).ready(function() {
 
 		// clear "show"-class first to make sure a change from "student" to another option = additional fields are hidden again
 		$(".doctor").removeClass("show");
+		$(".other").removeClass("show");
 
-		// has the user shosen the option "student"?
+		// has the user shosen the option "Doctor"?
 		if ( val=="Doctor") {
 
 			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".doctor").addClass("show");
 		}
+
+		// has the user shosen a option other than Doctor??
+		if ( val=="Nurse" || val=="Physiotherapist" || val=="themeaningoflife" ) {
+
+			// yes, add class "show" and let special CSS for this show the hidden fields
+			$(".other").addClass("show");
+		}
 	});
+
 
 
 // FUNTIONALITY FOR THE TABS BELOW!!
