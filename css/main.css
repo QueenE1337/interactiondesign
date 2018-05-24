@@ -206,6 +206,7 @@ header a {
 			}
 			body.modal-showing header {
 				opacity: 0;
+				display: none;
 			}
 			body.modal-showing.closing #site-container {
 				filter: blur(0px);
@@ -254,6 +255,14 @@ header a {
 	padding: 15px 20px;
 	margin: 15px 5px 0px 0px;
 	float: left;
+}
+
+#centeredButtons {
+	display: block;
+	margin: 10px auto;
+	float: none;
+	width: 125px;
+	text-align: center;
 }
 
 
@@ -379,6 +388,7 @@ header a {
 			}
 			body.register-showing header {
 				opacity: 0;
+				display: none;
 			}
 			body.register-showing.closing header {
 				opacity: 1;
