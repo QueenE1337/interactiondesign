@@ -21,6 +21,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		$("body").addClass("register-showing");
+		$("body").removeClass("modal-showing");
 	});
 
 
