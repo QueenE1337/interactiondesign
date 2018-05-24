@@ -3,7 +3,11 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 
 $(document).ready(function() {
 
+	$("a#loginmenulink").on("click", function(e) {
+		e.preventDefault();
 
+		$("body").addClass("modal-showing");
+	});
 
 	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
