@@ -492,6 +492,38 @@ input[type="submit"] {
 /*     FORM DESIGN end     */
 
 
+/*     SELECTION IN DROP DOWN MENU start     */
+
+.doctor {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.doctor.show {
+	max-height: 215px;
+}
+
+.doctor label {
+	margin-top: 8px;
+}
+
+.doctor label:nth-child(1){
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.other {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.other.show {
+	max-height: 170px;
+}
+
+/*     SELECTION IN DROP DOWN MENU end    */
+
+
 /*     NEXT & BACK buttonzzz start     */
 
 #register.step2 #inputContainer {
@@ -509,7 +541,6 @@ input[type="submit"] {
 #register.back-step2 #inputContainer {
 	left: -100%;
 }
-
 
 
 /*     NEXT & BACK buttonzzz end     */
