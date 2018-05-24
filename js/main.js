@@ -195,12 +195,45 @@ $("#loginform").submit( function(e) {
 	}
 });
 
+
+// $("#nameLogIn").on( function(e) {
+// 	var postform = true;
+// 	var fields = $("#nameLogIn")
+//
+// 	fields.removeClass("error");
+//
+//
+// 		var type = $(this).attr("type");
+//
+// 		if (type == "text") {
+// 			if (val === undefined || val == null || val == "") {
+// 				postform = false;
+// 				$(this).addClass("error");
+// 			}
+// 		}
+//
+// 	if (!postform) {
+// 		e.preventDefault();
+// 	}
+// });
+
+
+// $('#nameLogIn').focus(function() {
+// 	var input=$(this);
+// 	var is_name=input.val();
+// 	if(is_name){$(this).removeClass("error");}
+// 	else{$(this).addClass("error");}
+// });
+
+
+});
+
 function validateEmail(email) {
 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 return re.test(String(email).toLowerCase());
 }
 
-});
+
 
 
 

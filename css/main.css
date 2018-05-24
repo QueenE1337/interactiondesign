@@ -669,7 +669,9 @@ footer {
 }
 
 .contentHolderBox > a > h3{
+	text-align: left;
 	font-size: 18px;
+	padding: 3px 0;
 }
 
 .contentHolderBox > a > img {
