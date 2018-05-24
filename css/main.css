@@ -428,10 +428,11 @@ header a {
 
 #inputContainer {
 	width: 300%;
-	height: 450px;
+	height: 520px;
 	position: absolute;
 	left: 0;
 	transition: all 0.2s ease-out;
+	overflow: hidden;
 }
 
 section {

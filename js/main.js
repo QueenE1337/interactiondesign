@@ -73,24 +73,29 @@ $(document).ready(function() {
 	$("#to-step3").on("click", function(e) {
 		e.preventDefault();
 
-		$("#register").removeClass("step2");
 		$("#register").addClass("step3");
+
+		$("#register").removeClass("step2");
+		$("#register").removeClass("back-step2");
 	})
 
 
 	$("#back-to-step1").on("click", function(e) {
 		e.preventDefault();
 
-		$("#register").removeClass("step2");
 		$("#register").addClass("back-step1");
+
+		$("#register").removeClass("step2");
+		$("#register").removeClass("back-step2");
+		$("#register").removeClass("step3");
 	})
 
 
 	$("#back-to-step2").on("click", function(e) {
 		e.preventDefault();
 
-		$("#register").removeClass("step3");
 		$("#register").addClass("back-step2");
+		$("#register").removeClass("step3");
 	})
 
 
