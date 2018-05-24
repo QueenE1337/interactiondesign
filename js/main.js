@@ -17,6 +17,7 @@ $(document).ready(function() {
 
 		$("body").addClass("register-showing");
 		$("body").removeClass("modal-showing");
+		$("#firststep input, #firststep a").removeAttr("tabindex");
 	});
 
 
@@ -62,14 +63,17 @@ $(document).ready(function() {
 
 
 	//REGISTRATION Next & Back buttons
+	//FROM STEP ONE --> TWO
 	$("#to-step2").on("click", function(e) {
 		e.preventDefault();
 
 		$("#register").removeClass("back-step1");
 		$("#register").addClass("step2");
+
+		$("#profession, #secondstep a").removeAttr("tabindex");
 	})
 
-
+	//FROM STEP TWO --> THREE
 	$("#to-step3").on("click", function(e) {
 		e.preventDefault();
 
@@ -77,9 +81,11 @@ $(document).ready(function() {
 
 		$("#register").removeClass("step2");
 		$("#register").removeClass("back-step2");
+
+		$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
 	})
 
-
+	//BACK STEP TWO --> ONE
 	$("#back-to-step1").on("click", function(e) {
 		e.preventDefault();
 
@@ -90,7 +96,7 @@ $(document).ready(function() {
 		$("#register").removeClass("step3");
 	})
 
-
+	//BACK STEP THREE --> TWO
 	$("#back-to-step2").on("click", function(e) {
 		e.preventDefault();
 
@@ -115,6 +121,7 @@ $(document).ready(function() {
 
 			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".doctor").addClass("show");
+			$(".doctor input, .doctor select, .doctor a").removeAttr("tabindex");
 		}
 
 		// has the user shosen a option other than Doctor??
@@ -122,6 +129,7 @@ $(document).ready(function() {
 
 			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".other").addClass("show");
+			$(".other input, .other select, .other a").removeAttr("tabindex");
 		}
 	});
 
