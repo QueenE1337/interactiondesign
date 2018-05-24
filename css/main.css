@@ -332,6 +332,7 @@ header a {
 /*     REGISTER POP UP start     */
 
 .register-container {
+	background-color: rgba(0, 0, 0, 0.8);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -352,6 +353,12 @@ header a {
 			}
 			body.register-showing.closing .register-container {
 				opacity: 0;
+			}
+			body.register-showing header {
+				opacity: 0;
+			}
+			body.register-showing.closing header {
+				opacity: 1;
 			}
 
 #register {
