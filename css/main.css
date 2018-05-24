@@ -256,6 +256,14 @@ header a {
 	float: left;
 }
 
+#centeredButtons {
+	display: block;
+	margin: 10px auto;
+	float: none;
+	width: 125px;
+	text-align: center;
+}
+
 
 /*     LOGIN MODAL start     */
 
