@@ -84,25 +84,112 @@
 
     <div class="register-container">
       <div id="register">
-        <h2>Register</h2>
+          <div id="inputContainer">
 
-        <form>
-          <label>
-            Username
-            <input type="text" name="Name" required="required"/>
-          </label>
+            <section id="firststep">
+              <h2>Register</h2>
+              <form>
+                <label>
+                  Firstname
+                  <input type="text" name="firstname" required="required"/>
+                </label>
 
-          <label>
-            Password
-            <input type="password" name="Password" required="required"/>
-          </label>
+                <label>
+                  Lastname
+                  <input type="text" name="lastname" required="required"/>
+                </label>
 
-          <a href="#" class="button" id="back">Back</a>
-          <a href="#" class="button" id="next">Next</a>
-        </form>
+                <a href="#" class="button" id="to-step2">Next →</a>
+              </section>
 
-        <a href="#" class="cancel">x</a>
+              <section id="secondstep">
+                <h2>Work</h2>
 
+                <label>
+                  Profession
+                  <select>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Physiotherapist">Physiotherapist</option>
+                    <option value="themeaningoflife">The meaning of life</option>
+                  </select>
+
+                  <div id="doctor">
+                    <label>
+                      SV-number
+                      <input type="number" name="SV-number" required="required"/>
+                    </label>
+
+                    Speciality
+                    <select>
+                      <option value="Doctor">Diabetes</option>
+                      <option value="Nurse">Babies</option>
+                      <option value="Physiotherapist">Sex</option>
+                      <option value="themeaningoflife">Kidney</option>
+                    </select>
+
+                    <label>
+                      City
+                      <input type="text" name="city" required="required"/>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input type="text" name="workplace" required="required"/>
+                    </label>
+                  </div>
+
+                  <div id="other">
+                    Speciality
+                    <select>
+                      <option value="Doctor">Diabetes</option>
+                      <option value="Nurse">Babies</option>
+                      <option value="Physiotherapist">Sex</option>
+                      <option value="themeaningoflife">Kidney</option>
+                    </select>
+
+                    <label>
+                      City
+                      <input type="text" name="city" required="required"/>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input type="text" name="workplace" required="required"/>
+                    </label>
+                  </div>
+
+                  <a href="#" class="button" id="back-to-step1">← Back</a>
+                  <a href="#" class="button" id="to-step3">Next →</a>
+                </label>
+              </section>
+
+              <section id="thirdstep">
+                <h2>User Info</h2>
+
+                <label>
+      						Username
+      						<input type="text" name="username" required="required"/>
+      					</label>
+
+      					<label>
+      						Password
+      						<input type="password" name="passwordOne" required="required"/>
+      					</label>
+
+                <label>
+      						Repeat password
+      						<input type="password" name="passwordTwo" required="required"/>
+      					</label>
+
+                <a href="#" class="button" id="back-to-step2">← Back</a>
+      					<input type="submit" value="SUBMIT"/>
+              </section>
+            </form>
+
+          </div>
+
+          <a href="#" class="cancel">x</a>
       </div>
     </div>
 

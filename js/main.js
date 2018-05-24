@@ -60,6 +60,39 @@ $(document).ready(function() {
 	});
 
 
+	//REGISTRATION Next & Back buttons
+	$("#to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("back-step1");
+		$("#register").addClass("step2");
+	})
+
+
+	$("#to-step3").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step2");
+		$("#register").addClass("step3");
+	})
+
+
+	$("#back-to-step1").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step2");
+		$("#register").addClass("back-step1");
+	})
+
+
+	$("#back-to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("step3");
+		$("#register").addClass("back-step2");
+	})
+
+
 
 // FUNTIONALITY FOR THE TABS BELOW!!
 // ----------------------------------------------
