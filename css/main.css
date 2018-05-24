@@ -514,3 +514,13 @@ footer {
 	text-decoration: none;
 	font-size: 20px;
 }
+
+/* BREADCRUMBS */
+#bread-crumbs {
+	 margin: 10px 0px 10px 30px;
+}
+#bread-crumbs p {
+	display: inline;
+	font-size: 12px;
+	padding-left: 3px;
+}
