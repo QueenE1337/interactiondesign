@@ -20,6 +20,15 @@ $(document).ready(function() {
 		$("#firststep input, #firststep a").removeAttr("tabindex");
 	});
 
+	// Open the event modal
+	$("a.open-eventmodal").on("click", function(e) {
+		e.preventDefault();
+
+		$("body").addClass("modal-showing");
+		$("nav, #hamburger-button").removeClass("clicked");
+	});
+
+
 
 	// CLOSE LOGIN MODAL ON CANCEL ( X )
 	$(".modal-container, #modal .cancel").on("click", function(e) {
@@ -51,6 +60,23 @@ $(document).ready(function() {
 		});
 	})
 
+	// CLOSE EVENT MODAL ON CANCEL ( X )
+	$(".modal-container, #eventmodal .cancel").on("click", function(e) {
+		e.preventDefault();
+
+		var fields = $("#loginform").find("*[required]");
+		fields.removeClass("error");
+
+		$("body").addClass("closing");
+
+
+		$(".modal-container #eventmodal").one(transEnd, function() {
+
+			$("body").removeClass("modal-showing closing");
+			$(this).off(transEnd);
+		});
+	})
+
 
 	// but NOT on clicks in the modal (=prevent "bubbling")
 	$("#modal").on("click", function(e) {
@@ -58,6 +84,10 @@ $(document).ready(function() {
 	});
 
 	$("#register").on("click", function(e) {
+		e.stopPropagation();
+	});
+
+	$("#eventmodal").on("click", function(e) {
 		e.stopPropagation();
 	});
 
