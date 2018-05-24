@@ -95,6 +95,24 @@ $(document).ready(function() {
 
 
 
+	// on change-event of <select>, do stuff:
+	$("#profession").change(function() {
+
+		// save the chosen value
+		var val = $(this).find("option:selected").attr("value");
+
+		// clear "show"-class first to make sure a change from "student" to another option = additional fields are hidden again
+		$(".doctor").removeClass("show");
+
+		// has the user shosen the option "student"?
+		if ( val=="Doctor") {
+
+			// yes, add class "show" and let special CSS for this show the hidden fields
+			$(".doctor").addClass("show");
+		}
+	});
+
+
 // FUNTIONALITY FOR THE TABS BELOW!!
 // ----------------------------------------------
 
