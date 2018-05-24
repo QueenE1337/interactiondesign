@@ -61,17 +61,23 @@
 
 				<h2>Log in</h2>
 
-				<form>
+				<form id="loginform" novalidate="novalidate">
 					<label>
 						Username
 						<input type="text" name="Name" required="required"/>
+            <div class="errormessage">
+              <p>Please type your username</p>
+            </div>
 					</label>
 
 					<label>
 						Password
 						<input type="password" name="Password" required="required"/>
+            <div class="errormessage">
+              <p>Please type your password</p>
+            </div>
 					</label>
-
+          
 					<input type="submit" value="LOG IN"/>
 				</form>
 
@@ -86,7 +92,7 @@
       <div id="register">
         <h2>Register</h2>
 
-        <form>
+        <form id="registerform">
           <label>
             Username
             <input type="text" name="Name" required="required"/>

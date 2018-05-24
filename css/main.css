@@ -326,6 +326,27 @@ header a {
 	margin-right: 10px;
 }
 
+.errormessage {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	overflow: hidden;
+}
+
+.errormessage > p {
+	margin: 0;
+	color: #e00b0b;
+}
+
+*[required].error {
+	background-color: #f2e6e6;
+	border-color: #e00b0b;
+	color: #e00b0b;
+}
+
+*[required].error + .errormessage {
+	max-height: 25px;
+}
+
 /*     LOGIN MODAL end     */
 
 
