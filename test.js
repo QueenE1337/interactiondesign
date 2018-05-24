@@ -12,7 +12,7 @@ for (var i=0; < data.length; i++) {
   }
 }
 
-if (fround == true ) {
+if (found == true ) {
   USER IS FOUND.
 }
 
