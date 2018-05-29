@@ -80,7 +80,7 @@ header nav ul {
 }
 
 header ul li {
-	margin: 25px 20px;
+	margin: 10px 20px;
 	float: left;
 	margin-right: 100px;
 }
@@ -188,6 +188,7 @@ header a {
 
 
 #site-container {
+	max-width: 1000px;
 	padding-top: 70px;
 	margin: 0 auto;
 	position: relative;
@@ -337,6 +338,10 @@ header a {
 	margin-right: 10px;
 }
 
+#modal .cancel {
+	top: 0;
+}
+
 .errormessage {
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
@@ -465,19 +470,89 @@ section {
 
 /*     REGISTER POP UP end     */
 
+/*     NEXT & BACK buttonzzz start     */
+
+#register.step2 #inputContainer {
+	left: -100%;
+}
+
+#register.step3 #inputContainer {
+	left: -200%;
+}
+
+#register.back-step1 #inputContainer {
+	left: 0;
+}
+
+#register.back-step2 #inputContainer {
+	left: -100%;
+}
+
+/*     NEXT & BACK buttonzzz end     */
+
+
+/*     PROCESS BAR start     */
+
+#progressColor {
+	width: 33.333%;
+	height: 25px;
+	background-color: #c9ecff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 0.3s ease-out;
+}
+
+#progressContainer {
+	width: 100%;
+	height: 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.progressStep {
+	width: 33.333%;
+	height: 25px;
+	float: left;
+}
+
+.progressStep p {
+	text-align: center;
+  font-size: 15px;
+  color: black;
+  opacity: 0.3;
+  font-weight: bold;
+  padding: 3px 0px 0px 0px;
+  margin: 0;
+}
+
+#progressContainer.step2 #progressColor {
+	width: 66.666%;
+}
+
+#progressContainer.step3 #progressColor {
+	width: 100%;
+}
+
+
+/*     PROCESS BAR end     */
+
+
 /*     EVENT MODAL  start    */
 
 #eventmodal {
-	min-width: 300px;
-	height: 450px;
-	padding: 20px;
+	width: 300px;
+	height: 550px;
 	overflow: hidden;
 	background-color: white;
 	position: absolute;
+	position: relative;
   top: 50%;
   left: 50%;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-
 
 	transition: top 0.2s ease-out, transform 0.2s ease-out;
 
@@ -505,13 +580,13 @@ section {
 							   scale(0.9) /* zoom in to scale 1:1 */
 					   	   	   rotateX(60deg);
 			}
-#eventmodal {
-	overflow: scroll;
-}
+
+
 #eventmodal h3 {
 	text-align: left;
 	margin: 5px 0px 10px 0px;
 }
+
 #eventmodal img {
 	width: 100%
 }
@@ -519,6 +594,25 @@ section {
 #eventmodal h2 {
 	margin: 0px;
 }
+
+#eventmodal .cancel {
+	top: 0;
+}
+
+#eventContainer {
+	width: 200%;
+	height: 450px;
+	position: absolute;
+	left: 0;
+	transition: left 0.2s ease-out;
+}
+
+#event {
+	width: 50%;
+	float: left;
+	padding: 20px;
+}
+
 .event-button {
 	background: #0077b2;
 	color: white;
@@ -528,6 +622,25 @@ section {
 	text-align: center;
 	display: block;
 	width: 40%;
+}
+
+#eventmodal.confirmation #eventContainer {
+	left: -100%;
+}
+
+input[type="checkbox"] {
+	float: left;
+	margin-top: 12px;
+}
+
+input[type="checkbox"]+p {
+	font-size: 15px;
+	float: left;
+	margin: 0;
+	margin-left: 6px;
+	margin-top: 10px;
+  width: 230px;
+	text-align: left;
 }
 
 
@@ -612,39 +725,19 @@ input[type="submit"] {
 /*     SELECTION IN DROP DOWN MENU end    */
 
 
-/*     NEXT & BACK buttonzzz start     */
-
-#register.step2 #inputContainer {
-	left: -100%;
-}
-
-#register.step3 #inputContainer {
-	left: -200%;
-}
-
-#register.back-step1 #inputContainer {
-	left: 0;
-}
-
-#register.back-step2 #inputContainer {
-	left: -100%;
-}
-
-
-/*     NEXT & BACK buttonzzz end     */
-
 
 /*     CANCEL ( X ) BUTTON && NEED HELP??  start   */
 
 .cancel {
+	font-size: 28px;
 	background-color: black;
-	font-size: 20px;
 	color: white;
-	padding: 10px 18px;
-	position: absolute;
-	top: 0;
+ 	padding: 5.5px 18px;
+ 	position: absolute;
+	top: 25px;
 	right: 0;
 	text-decoration: none;
+	z-index: 10;
 }
 
 .needHelp {
@@ -723,18 +816,19 @@ input[type="submit"] {
 
 #tab1{
 	text-align: center;
+	overflow: hidden;
 }
 
 
 /*Right column--------------------*/
 
-#tab1 > .columnRight{
+.columnRight{
 	width: 50%;
 	float: right;
 
 }
 
-#tab1 > .columnRight > .contentHolderBox{
+.columnRight > .contentHolderBox{
 	margin-left: 1.5%;
 	margin-right:2%;
 	margin-bottom: 5px;
@@ -745,13 +839,13 @@ input[type="submit"] {
 
 /*Left column--------------------*/
 
-#tab1 > .columnLeft{
+.columnLeft{
 	width: 50%;
 	float: left;
 
 }
 
-#tab1 > .columnLeft > .contentHolderBox{
+.columnLeft > .contentHolderBox{
 	margin-left: 2%;
 	margin-right: 1.5%;
 	margin-bottom: 5px;
@@ -781,31 +875,40 @@ input[type="submit"] {
 }
 
 #tab2{
+	overflow: hidden;
 
 }
 
-#tab2 > ul{
+.personalLinkList{
 padding: 0;
 width: 96.5%;
 margin: 0 auto;
 }
 
-#tab2 > ul > a > li{
+.personalLinkList > a > li{
 	border: solid 1px #000;
 	padding: 6px;
 	list-style: none;
 	margin-bottom: 8px;
 }
 
-#tab2 > ul > a{
+.personalLinkList > a{
 	text-decoration: none;
 	font-size: 18px;
 }
 
-#tab2 > ul > a > li > img{
+.personalLinkList > a > li > img{
 max-width: 22px;
 height: auto;
 float: right;
+}
+
+.samePage{
+	display: none;
+}
+
+.networkContent{
+	display: none;
 }
 
 /* BREADCRUMBS */
@@ -819,16 +922,7 @@ float: right;
 }
 
 
-<<<<<<< HEAD
-@media (min-width:450px) {
 
-	.box{
-		height: 250px;
-	}
-
-
-}
-=======
 /*     FOOTER start     */
 
 footer {
@@ -840,4 +934,188 @@ footer {
 }
 
 /*     FOOTER end    */
->>>>>>> 0e3495c5fb4cfec8d624d4dc149fe74f6165342c
+
+
+
+
+@media (min-width:500px) {
+
+	#modal{
+		min-width: 400px;
+	}
+
+	#register{
+		min-width: 400px;
+	}
+
+	.boxContainer{
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.box{
+		height: 200px;
+		width: 50%;
+	}
+}
+
+@media (min-width:600px) {
+
+	.box {
+		height: 250px;
+	}
+
+}
+
+@media (min-width:700px) {
+
+	#modal{
+		min-width: 500px;
+	}
+
+	#register{
+		min-width: 500px;
+	}
+
+	.box {
+		height: 300px;
+	}
+}
+
+@media (min-width:800px) {
+
+	header{
+		-webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+	}
+
+
+	header > #siteId{
+		font-size: 30px;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+
+
+	header > nav {
+		background-color: inherit;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: inherit;
+		box-shadow: none;
+		text-align: center;
+		transition: none;
+	}
+
+	nav.clicked {
+		width: 100%;
+	}
+
+	header > nav > ul {
+		display: inline-block;
+		margin: 0 auto;
+		float: none;
+		margin-bottom: 2px;
+	}
+
+	header nav ul li {
+		text-align: center;
+		margin: 0 12px;
+		float: left;
+	}
+
+	header nav ul li:nth-child(1){
+		margin-left: 0;
+	}
+
+	#hamburger-button{
+		display: none;
+	}
+
+	#site-container{
+		padding-top: 100px;
+	}
+
+	.box {
+		height: 350px;
+	}
+
+	.tabs, #tab1, #tab2{
+		display: none;
+	}
+
+	.networkContent{
+		margin-top: 20px;
+		overflow: hidden;
+		width: 100%;
+		display: block;
+	}
+
+	.networkContent > .theFeed{
+		width: 100%;
+	}
+
+	.samePage{
+		margin-top: 20px;
+		overflow: hidden;
+		width: 100%;
+		display: block;
+	}
+
+	.theFeed{
+		float: left;
+		width: 75%;
+	}
+
+	.theLinks{
+		float: left;
+		width:25%;
+	}
+
+}
+
+@media (min-width:900px) {
+
+	.box {
+		height: 400px;
+	}
+
+}
+
+
+
+@media (min-width:1000px) {
+
+	#modal{
+		min-width: 600px;
+	}
+
+	#register{
+		min-width: 600px;
+	}
+
+	#centeredButtons{
+		margin-bottom: 40px;
+	}
+
+	.box{
+		height: 200px;
+		width: 25%;
+	}
+
+	.boxContainer{
+		margin-bottom: 25px;
+	}
+
+	#newsletterP{
+		margin-bottom: 15px;
+	}
+
+	footer{
+		padding: 3%;
+		margin-top: 40px;
+	}
+
+}

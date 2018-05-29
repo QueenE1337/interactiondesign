@@ -84,6 +84,12 @@ $(document).ready(function() {
 			$("body").removeClass("modal-showing closing");
 			$(this).off(transEnd);
 		});
+
+		$(".modal-container #eventmodal").one(transEnd, function() {
+
+			$("#eventmodal").removeClass("confirmation");
+			$(this).off(transEnd);
+		});
 	})
 
 
@@ -100,6 +106,58 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
+<<<<<<< HEAD
+=======
+
+	//REGISTRATION Next & Back buttons
+	//FROM STEP ONE --> TWO
+	$("#to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").removeClass("back-step1");
+		$("#register").addClass("step2");
+		$("#progressContainer").addClass("step2");
+
+		$("#profession, #secondstep a").removeAttr("tabindex");
+	})
+
+	//FROM STEP TWO --> THREE
+	$("#to-step3").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").addClass("step3");
+		$("#progressContainer").addClass("step3");
+
+		$("#register").removeClass("step2");
+		$("#register").removeClass("back-step2");
+
+		$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+	})
+
+	//BACK STEP TWO --> ONE
+	$("#back-to-step1").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").addClass("back-step1");
+
+		$("#register").removeClass("step2");
+		$("#register").removeClass("back-step2");
+		$("#register").removeClass("step3");
+		$("#progressContainer").removeClass("step2");
+	})
+
+	//BACK STEP THREE --> TWO
+	$("#back-to-step2").on("click", function(e) {
+		e.preventDefault();
+
+		$("#register").addClass("back-step2");
+		$("#register").removeClass("step3");
+		$("#progressContainer").removeClass("step3");
+	})
+
+
+
+>>>>>>> c6c1ea76258880484f441a256dc4d95ed141c150
 	// on change-event of <select>, do stuff:
 	$("#profession").change(function() {
 
@@ -125,6 +183,15 @@ $(document).ready(function() {
 			$(".other").addClass("show");
 			$(".other input, .other select, .other a").removeAttr("tabindex");
 		}
+	});
+
+
+	// SLIDING THE EVENT INFORMATION - TO CONFIRMATION:
+	$("a.event-button").on("click", function(e) {
+		e.preventDefault();
+
+		$("#eventmodal").addClass("confirmation");
+		$("#event input").removeAttr('tabindex');
 	});
 
 
