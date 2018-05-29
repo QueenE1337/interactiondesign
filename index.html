@@ -98,7 +98,7 @@
 
             <section id="firststep">
               <h2>Register</h2>
-              <form id="registerform">
+              <form id="form-one">
                 <label>
                   Firstname
                   <input type="text" name="firstname" required="required" tabindex="-1"/>
@@ -115,11 +115,15 @@
                   </div>
                 </label>
 
-                <a href="#" class="button" id="to-step2" tabindex="-1">Next →</a>
+                <input type="submit" value="Next" class="button" id="to-step2" tabindex="-1"/>
+
+              </form>
               </section>
 
               <section id="secondstep">
                 <h2>Work</h2>
+
+                <form id="form-two">
 
                 <label>
                   Profession
@@ -179,12 +183,16 @@
                   </div>
 
                   <a href="#" class="button" id="back-to-step1" tabindex="-1">← Back</a>
-                  <a href="#" class="button" id="to-step3" tabindex="-1">Next →</a>
+                  <input type="submit" value="Next" class="button" id="to-step3" tabindex="-1"/>
                 </label>
+
+              </form>
               </section>
 
               <section id="thirdstep">
                 <h2>User Info</h2>
+
+                <form id="form-three">
 
                 <label>
       						Username
@@ -202,12 +210,13 @@
       					</label>
 
                 <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
-      					<input type="submit" value="SUBMIT" tabindex="-1"/>
+      					<input type="submit" value="Sign Up" class="button" tabindex="-1"/>
               </section>
             </form>
 
           </div>
           <a href="#" class="cancel">x</a>
+          <a href="#" class="needHelp">Need help?</a>
       </div>
     </div>
 
