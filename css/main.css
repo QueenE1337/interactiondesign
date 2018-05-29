@@ -188,6 +188,7 @@ header a {
 
 
 #site-container {
+	max-width: 1000px;
 	padding-top: 70px;
 	margin: 0 auto;
 	position: relative;
@@ -586,13 +587,12 @@ section {
 	margin: 5px 0px 10px 0px;
 }
 
-#eventmodal h2 {
-	font-size: 22px;
-	margin: 0px;
-}
-
 #eventmodal img {
 	width: 100%
+}
+
+#eventmodal h2 {
+	margin: 0px;
 }
 
 #eventmodal .cancel {
@@ -912,13 +912,6 @@ float: right;
 }
 
 
-@media (min-width:450px) {
-
-	.box{
-		height: 250px;
-	}
-
-}
 
 /*     FOOTER start     */
 
@@ -931,3 +924,146 @@ footer {
 }
 
 /*     FOOTER end    */
+
+
+
+
+@media (min-width:500px) {
+
+	header{
+		-webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+	}
+
+
+	header > #siteId{
+		font-size: 30px;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+
+
+	header > nav {
+		background-color: inherit;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: inherit;
+		box-shadow: none;
+		text-align: center;
+		transition: none;
+	}
+
+	header > nav > ul {
+		display: inline-block;
+		margin: 0 auto;
+		float: none;
+		margin-bottom: 2px;
+	}
+
+	header nav ul li {
+		text-align: center;
+		margin: 0 12px;
+		float: left;
+	}
+
+	header nav ul li:nth-child(1){
+		margin-left: 0;
+	}
+
+	#hamburger-button{
+		display: none;
+	}
+
+	#site-container{
+		padding-top: 100px;
+	}
+
+	.boxContainer{
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.box{
+		height: 200px;
+		width: 50%;
+	}
+}
+
+@media (min-width:600px) {
+
+	.box {
+		height: 250px;
+	}
+
+}
+
+@media (min-width:700px) {
+
+#modal{
+	min-width: 500px;
+}
+
+#register{
+	min-width: 500px;
+}
+
+
+	.box {
+		height: 300px;
+	}
+
+}
+
+@media (min-width:800px) {
+
+	.box {
+		height: 350px;
+	}
+
+}
+
+@media (min-width:900px) {
+
+	.box {
+		height: 400px;
+	}
+
+}
+
+
+
+@media (min-width:1000px) {
+
+	#modal{
+		min-width: 600px;
+	}
+
+	#register{
+		min-width: 600px;
+	}
+
+	#centeredButtons{
+		margin-bottom: 40px;
+	}
+
+	.box{
+		height: 200px;
+		width: 25%;
+	}
+
+	.boxContainer{
+		margin-bottom: 25px;
+	}
+
+	#newsletterP{
+		margin-bottom: 15px;
+	}
+
+	footer{
+		padding: 3%;
+		margin-top: 40px;
+	}
+
+}
