@@ -84,6 +84,12 @@ $(document).ready(function() {
 			$("body").removeClass("modal-showing closing");
 			$(this).off(transEnd);
 		});
+
+		$(".modal-container #eventmodal").one(transEnd, function() {
+
+			$("#eventmodal").removeClass("confirmation");
+			$(this).off(transEnd);
+		});
 	})
 
 
@@ -174,6 +180,14 @@ $(document).ready(function() {
 			$(".other").addClass("show");
 			$(".other input, .other select, .other a").removeAttr("tabindex");
 		}
+	});
+
+
+	// SLIDING THE EVENT INFORMATION - TO CONFIRMATION:
+	$("a.event-button").on("click", function(e) {
+		e.preventDefault();
+
+		$("#eventmodal").addClass("confirmation");
 	});
 
 
