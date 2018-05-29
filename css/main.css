@@ -80,7 +80,7 @@ header nav ul {
 }
 
 header ul li {
-	margin: 25px 20px;
+	margin: 10px 20px;
 	float: left;
 	margin-right: 100px;
 }
@@ -816,18 +816,19 @@ input[type="submit"] {
 
 #tab1{
 	text-align: center;
+	overflow: hidden;
 }
 
 
 /*Right column--------------------*/
 
-#tab1 > .columnRight{
+.columnRight{
 	width: 50%;
 	float: right;
 
 }
 
-#tab1 > .columnRight > .contentHolderBox{
+.columnRight > .contentHolderBox{
 	margin-left: 1.5%;
 	margin-right:2%;
 	margin-bottom: 5px;
@@ -838,13 +839,13 @@ input[type="submit"] {
 
 /*Left column--------------------*/
 
-#tab1 > .columnLeft{
+.columnLeft{
 	width: 50%;
 	float: left;
 
 }
 
-#tab1 > .columnLeft > .contentHolderBox{
+.columnLeft > .contentHolderBox{
 	margin-left: 2%;
 	margin-right: 1.5%;
 	margin-bottom: 5px;
@@ -874,31 +875,36 @@ input[type="submit"] {
 }
 
 #tab2{
+	overflow: hidden;
 
 }
 
-#tab2 > ul{
+.personalLinkList{
 padding: 0;
 width: 96.5%;
 margin: 0 auto;
 }
 
-#tab2 > ul > a > li{
+.personalLinkList > a > li{
 	border: solid 1px #000;
 	padding: 6px;
 	list-style: none;
 	margin-bottom: 8px;
 }
 
-#tab2 > ul > a{
+.personalLinkList > a{
 	text-decoration: none;
 	font-size: 18px;
 }
 
-#tab2 > ul > a > li > img{
+.personalLinkList > a > li > img{
 max-width: 22px;
 height: auto;
 float: right;
+}
+
+.samePage{
+	display: none;
 }
 
 /* BREADCRUMBS */
@@ -930,6 +936,50 @@ footer {
 
 @media (min-width:500px) {
 
+	#modal{
+		min-width: 400px;
+	}
+
+	#register{
+		min-width: 400px;
+	}
+
+	.boxContainer{
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.box{
+		height: 200px;
+		width: 50%;
+	}
+}
+
+@media (min-width:600px) {
+
+	.box {
+		height: 250px;
+	}
+
+}
+
+@media (min-width:700px) {
+
+	#modal{
+		min-width: 500px;
+	}
+
+	#register{
+		min-width: 500px;
+	}
+
+	.box {
+		height: 300px;
+	}
+}
+
+@media (min-width:800px) {
+
 	header{
 		-webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
 		-moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
@@ -953,6 +1003,10 @@ footer {
 		box-shadow: none;
 		text-align: center;
 		transition: none;
+	}
+
+	nav.clicked {
+		width: 100%;
 	}
 
 	header > nav > ul {
@@ -980,46 +1034,29 @@ footer {
 		padding-top: 100px;
 	}
 
-	.boxContainer{
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	.box{
-		height: 200px;
-		width: 50%;
-	}
-}
-
-@media (min-width:600px) {
-
-	.box {
-		height: 250px;
-	}
-
-}
-
-@media (min-width:700px) {
-
-#modal{
-	min-width: 500px;
-}
-
-#register{
-	min-width: 500px;
-}
-
-
-	.box {
-		height: 300px;
-	}
-
-}
-
-@media (min-width:800px) {
-
 	.box {
 		height: 350px;
+	}
+
+	.tabs, #tab1, #tab2{
+		display: none;
+	}
+
+	.samePage{
+		margin-top: 20px;
+		overflow: hidden;
+		width: 100%;
+		display: block;
+	}
+
+	.theFeed{
+		float: left;
+		width: 75%;
+	}
+
+	.theLinks{
+		float: left;
+		width:25%;
 	}
 
 }
