@@ -188,6 +188,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		$("#eventmodal").addClass("confirmation");
+		$("#event input").removeAttr('tabindex');
 	});
 
 

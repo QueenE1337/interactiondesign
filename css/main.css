@@ -188,7 +188,6 @@ header a {
 
 
 #site-container {
-	max-width: 1000px;
 	padding-top: 70px;
 	margin: 0 auto;
 	position: relative;
@@ -587,12 +586,13 @@ section {
 	margin: 5px 0px 10px 0px;
 }
 
-#eventmodal img {
-	width: 100%
+#eventmodal h2 {
+	font-size: 22px;
+	margin: 0px;
 }
 
-#eventmodal h2 {
-	margin: 0px;
+#eventmodal img {
+	width: 100%
 }
 
 #eventmodal .cancel {
@@ -912,7 +912,16 @@ float: right;
 }
 
 
+<<<<<<< HEAD
+@media (min-width:450px) {
 
+	.box{
+		height: 250px;
+	}
+
+
+}
+=======
 /*     FOOTER start     */
 
 footer {
@@ -924,155 +933,4 @@ footer {
 }
 
 /*     FOOTER end    */
-
-
-
-
-@media (min-width:500px) {
-
-	header{
-		-webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
-		-moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
-		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
-	}
-
-
-	header > #siteId{
-		font-size: 30px;
-		margin-top: 15px;
-		margin-bottom: 10px;
-	}
-
-
-	header > nav {
-		background-color: inherit;
-		width: 100%;
-		height: 100%;
-		position: relative;
-		z-index: inherit;
-		box-shadow: none;
-		text-align: center;
-		transition: none;
-	}
-
-	header > nav > ul {
-		display: inline-block;
-		margin: 0 auto;
-		float: none;
-		margin-bottom: 2px;
-	}
-
-	header nav ul li {
-		text-align: center;
-		margin: 0 12px;
-		float: left;
-	}
-
-	header nav ul li:nth-child(1){
-		margin-left: 0;
-	}
-
-	#hamburger-button{
-		display: none;
-	}
-
-	#site-container{
-		padding-top: 100px;
-	}
-
-	.boxContainer{
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	.box{
-		height: 220px;
-		width: 50%;
-	}
-
-
-@media (min-width:1000px) {
-
-
-
-	.box{
-
-		width: 25%;
-	}
-
-	.boxContainer{
-		margin-bottom: 65px;
-	}
-
-	#newsletterP{
-		margin-bottom: 15px;
-	}
-
-	footer{
-		padding: 3%;
-	}
-
-}
-
-
-
-
-	/*
-
-	.boxContainer {
-	  width: 100%;
-	  height: auto;
-	  overflow: hidden;
-		margin-top: 10px;
-	}
-
-	.box {
-		text-align: center;
-	  width: 50%;
-	  height: 150px;
-	  box-sizing: border-box;
-	  float: left;
-	  border: 3px solid white;
-	}
-
-
-
-	header nav {
-		background: white;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		overflow: hidden;
-		transition: width 0.3s ease-in-out;
-		-webkit-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	  -moz-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	  box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	}
-
-	nav.clicked {
-		width: 250px;
-	}
-
-	header nav ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		float: left;
-	  margin-top: 50px;
-	}
-
-	header ul li {
-		margin: 25px 20px;
-		float: left;
-		margin-right: 100px;
-	}
-
-	header a {
-		color: black;
-		text-decoration: none;
-		font-weight: 800;
-		font-size: 20px;
-		white-space: nowrap;
-	}*/
-}
+>>>>>>> 0e3495c5fb4cfec8d624d4dc149fe74f6165342c
