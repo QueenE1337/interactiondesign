@@ -950,22 +950,75 @@ footer {
 	}
 
 	.box{
-		height: 220px;
+		height: 200px;
 		width: 50%;
 	}
+}
+
+@media (min-width:600px) {
+
+	.box {
+		height: 250px;
+	}
+
+}
+
+@media (min-width:700px) {
+
+#modal{
+	min-width: 500px;
+}
+
+#register{
+	min-width: 500px;
+}
+
+
+	.box {
+		height: 300px;
+	}
+
+}
+
+@media (min-width:800px) {
+
+	.box {
+		height: 350px;
+	}
+
+}
+
+@media (min-width:900px) {
+
+	.box {
+		height: 400px;
+	}
+
+}
+
 
 
 @media (min-width:1000px) {
 
+	#modal{
+		min-width: 600px;
+	}
 
+	#register{
+		min-width: 600px;
+	}
+
+	#centeredButtons{
+		margin-bottom: 40px;
+	}
 
 	.box{
-
+		height: 200px;
 		width: 25%;
 	}
 
 	.boxContainer{
-		margin-bottom: 65px;
+		margin-bottom: 25px;
 	}
 
 	#newsletterP{
@@ -974,69 +1027,135 @@ footer {
 
 	footer{
 		padding: 3%;
+		margin-top: 40px;
 	}
 
 }
 
 
 
-
-	/*
-
-	.boxContainer {
-	  width: 100%;
-	  height: auto;
-	  overflow: hidden;
-		margin-top: 10px;
-	}
-
-	.box {
-		text-align: center;
-	  width: 50%;
-	  height: 150px;
-	  box-sizing: border-box;
-	  float: left;
-	  border: 3px solid white;
-	}
+/*
 
 
+#register {
+	width: 300px;
+	height: 540px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+	position: relative;
+  top: 50%;
+  left: 50%;
+	z-index: 100
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
 
-	header nav {
-		background: white;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		overflow: hidden;
-		transition: width 0.3s ease-in-out;
-		-webkit-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	  -moz-box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	  box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.3);
-	}
 
-	nav.clicked {
-		width: 250px;
-	}
+	transition: top 0.2s ease-out, transform 0.2s ease-out;
 
-	header nav ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		float: left;
-	  margin-top: 50px;
-	}
+	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
+	transform: translate(-50%, -50%)
+				translateZ(0)
+				scale(0.9)
+				rotateX(60deg);
 
-	header ul li {
-		margin: 25px 20px;
-		float: left;
-		margin-right: 100px;
-	}
-
-	header a {
-		color: black;
-		text-decoration: none;
-		font-weight: 800;
-		font-size: 20px;
-		white-space: nowrap;
-	}*/
+	/* Getting the GPU to handle it - the NEW way
+	will-change: top, transform;
 }
+
+
+
+
+ .modal-container {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-out;
+
+	will-change: opacity;
+	transform: translateZ(0);
+}
+
+			body.modal-showing .modal-container {
+				opacity: 1;
+				visibility: visible;
+			}
+			body.modal-showing.closing .modal-container {
+				opacity: 0;
+			}
+
+#modal {
+	min-width: 300px;
+	height: 450px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+
+
+	transition: top 0.2s ease-out, transform 0.2s ease-out;
+
+	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
+	transform: translate(-50%, -50%)
+				translateZ(0)
+				scale(0.9)
+				rotateX(60deg);
+
+	/* Getting the GPU to handle it - the NEW way
+	will-change: top, transform;
+}
+
+			body.modal-showing .modal-container #modal {
+					top: 50%;
+					transform: translate(-50%, -50%)
+							   translateZ(0) /* Getting the GPU to handle it - the old way
+							   scale(1) /* zoom in to scale 1:1
+					   	   	   rotateX(0);
+			}
+			body.modal-showing.closing .modal-container #modal {
+					top: 45%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning
+							   translateZ(0) /* Getting the GPU to handle it - the old way
+							   scale(0.9) /* zoom in to scale 1:1
+					   	   	   rotateX(60deg);
+			}
+
+#modal img {
+	width: 20px;
+	float: left;
+	margin-right: 10px;
+}
+
+#modal .cancel {
+	top: 0;
+}
+
+.errormessage {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	overflow: hidden;
+}
+
+.errormessage > p {
+	margin: 0;
+	color: #e00b0b;
+}
+
+*[required].error {
+	background-color: #f2e6e6;
+	border-color: #e00b0b;
+	color: #e00b0b;
+}
+
+*[required].error + .errormessage {
+	max-height: 25px;
+} */
