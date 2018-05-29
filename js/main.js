@@ -3,6 +3,15 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 
 $(document).ready(function() {
 
+	setTimeout(function(){
+   $('#welcomemessage').addClass("showwelcome");// or fade, css display however you'd like.
+ }, 1000);
+
+	setTimeout(function(){
+		$('#welcomemessage').removeClass("showwelcome");
+   $('#welcomemessage').addClass("removewelcome");// or fade, css display however you'd like.
+ }, 4000);
+
 	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
 		e.preventDefault();

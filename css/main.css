@@ -640,24 +640,32 @@ input[type="submit"] {
 /*     CANCEL ( X ) BUTTON end     */
 
 
-/*     FOOTER start     */
+/*accountHomePage*/
 
-footer {
-	background-color: #b2e5ff;
-	padding: 5%;
-	font-size: 14px;
-	text-align: center;
-	margin-top: 80px;
+#welcomemessage {
+	background-color: rgba(178, 229, 255, 0.6);
+	width: 170px;
+	height: 40px;
+	border-radius: 30px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-out;
+	margin: 0 auto;
 }
 
-/*     FOOTER end    */
+#welcomemessage > p {
+	line-height: 40px;
+	margin: 5px;
+}
 
-
-
-/*accountHomePage*/
+#welcomemessage.showwelcome {
+	opacity: 1;
+	visibility: visible;
+}
 
 .tabs{
 	margin: 0;
+	margin-top: 5px;
 	text-align: center;
 	width: 100%;
 	padding-left: 0;
@@ -790,3 +798,16 @@ float: right;
 	font-size: 12px;
 	padding-left: 3px;
 }
+
+
+/*     FOOTER start     */
+
+footer {
+	background-color: #b2e5ff;
+	padding: 5%;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 80px;
+}
+
+/*     FOOTER end    */
