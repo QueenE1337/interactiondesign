@@ -20,6 +20,15 @@ $(document).ready(function() {
 		$("#firststep input, #firststep a").removeAttr("tabindex");
 	});
 
+	// Open the event modal
+	$("a.open-eventmodal").on("click", function(e) {
+		e.preventDefault();
+
+		$("body").addClass("modal-showing");
+		$("nav, #hamburger-button").removeClass("clicked");
+	});
+
+
 
 	// CLOSE LOGIN MODAL ON CANCEL ( X )
 	$(".modal-container, #modal .cancel").on("click", function(e) {
@@ -51,6 +60,23 @@ $(document).ready(function() {
 		});
 	})
 
+	// CLOSE EVENT MODAL ON CANCEL ( X )
+	$(".modal-container, #eventmodal .cancel").on("click", function(e) {
+		e.preventDefault();
+
+		var fields = $("#loginform").find("*[required]");
+		fields.removeClass("error");
+
+		$("body").addClass("closing");
+
+
+		$(".modal-container #eventmodal").one(transEnd, function() {
+
+			$("body").removeClass("modal-showing closing");
+			$(this).off(transEnd);
+		});
+	})
+
 
 	// but NOT on clicks in the modal (=prevent "bubbling")
 	$("#modal").on("click", function(e) {
@@ -58,6 +84,10 @@ $(document).ready(function() {
 	});
 
 	$("#register").on("click", function(e) {
+		e.stopPropagation();
+	});
+
+	$("#eventmodal").on("click", function(e) {
 		e.stopPropagation();
 	});
 
@@ -203,12 +233,45 @@ $("#loginform").submit( function(e) {
 	}
 });
 
+
+// $("#nameLogIn").on( function(e) {
+// 	var postform = true;
+// 	var fields = $("#nameLogIn")
+//
+// 	fields.removeClass("error");
+//
+//
+// 		var type = $(this).attr("type");
+//
+// 		if (type == "text") {
+// 			if (val === undefined || val == null || val == "") {
+// 				postform = false;
+// 				$(this).addClass("error");
+// 			}
+// 		}
+//
+// 	if (!postform) {
+// 		e.preventDefault();
+// 	}
+// });
+
+
+// $('#nameLogIn').focus(function() {
+// 	var input=$(this);
+// 	var is_name=input.val();
+// 	if(is_name){$(this).removeClass("error");}
+// 	else{$(this).addClass("error");}
+// });
+
+
+});
+
 function validateEmail(email) {
 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 return re.test(String(email).toLowerCase());
 }
 
-});
+
 
 
 

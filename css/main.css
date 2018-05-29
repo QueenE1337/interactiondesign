@@ -455,8 +455,73 @@ section {
 
 /*     REGISTER POP UP end     */
 
+/*     EVENT MODAL  start    */
+
+#eventmodal {
+	min-width: 300px;
+	height: 450px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
 
 
+	transition: top 0.2s ease-out, transform 0.2s ease-out;
+
+	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
+	transform: translate(-50%, -50%)
+				translateZ(0)
+				scale(0.9)
+				rotateX(60deg);
+
+	/* Getting the GPU to handle it - the NEW way */
+	will-change: top, transform;
+}
+
+			body.modal-showing .modal-container #eventmodal {
+					top: 50%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(1) /* zoom in to scale 1:1 */
+					   	   	   rotateX(0);
+			}
+			body.modal-showing.closing .modal-container #eventmodal {
+					top: 45%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(0.9) /* zoom in to scale 1:1 */
+					   	   	   rotateX(60deg);
+			}
+#eventmodal {
+	overflow: scroll;
+}
+#eventmodal h3 {
+	text-align: left;
+	margin: 5px 0px 10px 0px;
+}
+#eventmodal img {
+	width: 100%
+}
+
+#eventmodal h2 {
+	margin: 0px;
+}
+.event-button {
+	background: #0077b2;
+	color: white;
+	text-decoration: none;
+	padding: 15px 20px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	width: 40%;
+}
+
+
+/*     EVENT MODAL  end    */
 
 /*     FORM DESIGN start     */
 
@@ -679,7 +744,9 @@ footer {
 }
 
 .contentHolderBox > a > h3{
+	text-align: left;
 	font-size: 18px;
+	padding: 3px 0;
 }
 
 .contentHolderBox > a > img {
