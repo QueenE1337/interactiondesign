@@ -907,6 +907,10 @@ float: right;
 	display: none;
 }
 
+.networkContent{
+	display: none;
+}
+
 /* BREADCRUMBS */
 #bread-crumbs {
 	 margin: 10px 0px 10px 30px;
@@ -1040,6 +1044,17 @@ footer {
 
 	.tabs, #tab1, #tab2{
 		display: none;
+	}
+
+	.networkContent{
+		margin-top: 20px;
+		overflow: hidden;
+		width: 100%;
+		display: block;
+	}
+
+	.networkContent > .theFeed{
+		width: 100%;
 	}
 
 	.samePage{
