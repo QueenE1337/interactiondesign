@@ -451,6 +451,16 @@ section {
 	box-sizing: border-box;
 }
 
+#inputContainer input[type="submit"] {
+	margin: 15px 5px 0px 0px;
+	float: right;
+	border: none;
+}
+
+#inputContainer h2 {
+	margin: 0;
+}
+
 
 /*     REGISTER POP UP end     */
 
@@ -526,11 +536,11 @@ section {
 
 form {
 	border-top: 2px solid #dbdbdb;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 label:nth-child(1) {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 label {
@@ -623,7 +633,7 @@ input[type="submit"] {
 /*     NEXT & BACK buttonzzz end     */
 
 
-/*     CANCEL ( X ) BUTTON start     */
+/*     CANCEL ( X ) BUTTON && NEED HELP??  start   */
 
 .cancel {
 	background-color: black;
@@ -636,7 +646,14 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
-/*     CANCEL ( X ) BUTTON end     */
+.needHelp {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 0px 14px 6px 0px;
+}
+
+/*     CANCEL ( X ) BUTTON && NEED HELP??  end     */
 
 
 /*     FOOTER start     */
