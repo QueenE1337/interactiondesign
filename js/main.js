@@ -108,6 +108,7 @@ $(document).ready(function() {
 
 		$("#register").removeClass("back-step1");
 		$("#register").addClass("step2");
+		$("#progressContainer").addClass("step2");
 
 		$("#profession, #secondstep a").removeAttr("tabindex");
 	})
@@ -117,6 +118,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		$("#register").addClass("step3");
+		$("#progressContainer").addClass("step3");
 
 		$("#register").removeClass("step2");
 		$("#register").removeClass("back-step2");
@@ -133,6 +135,7 @@ $(document).ready(function() {
 		$("#register").removeClass("step2");
 		$("#register").removeClass("back-step2");
 		$("#register").removeClass("step3");
+		$("#progressContainer").removeClass("step2");
 	})
 
 	//BACK STEP THREE --> TWO
@@ -141,6 +144,7 @@ $(document).ready(function() {
 
 		$("#register").addClass("back-step2");
 		$("#register").removeClass("step3");
+		$("#progressContainer").removeClass("step3");
 	})
 
 
