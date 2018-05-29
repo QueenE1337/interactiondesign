@@ -235,6 +235,7 @@ header a {
 }
 
 .box {
+	text-align: center;
   width: 50%;
   height: 150px;
   box-sizing: border-box;
@@ -805,4 +806,14 @@ float: right;
 	display: inline;
 	font-size: 12px;
 	padding-left: 3px;
+}
+
+
+@media (min-width:450px) {
+
+	.box{
+		height: 250px;
+	}
+
+
 }
