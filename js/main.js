@@ -106,8 +106,7 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
-<<<<<<< HEAD
-=======
+
 
 	//REGISTRATION Next & Back buttons
 	//FROM STEP ONE --> TWO
@@ -157,7 +156,7 @@ $(document).ready(function() {
 
 
 
->>>>>>> c6c1ea76258880484f441a256dc4d95ed141c150
+
 	// on change-event of <select>, do stuff:
 	$("#profession").change(function() {
 
