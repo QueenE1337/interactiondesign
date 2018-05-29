@@ -912,16 +912,14 @@ float: right;
 }
 
 
-<<<<<<< HEAD
 @media (min-width:450px) {
 
 	.box{
 		height: 250px;
 	}
 
-
 }
-=======
+
 /*     FOOTER start     */
 
 footer {
@@ -933,4 +931,3 @@ footer {
 }
 
 /*     FOOTER end    */
->>>>>>> 0e3495c5fb4cfec8d624d4dc149fe74f6165342c
