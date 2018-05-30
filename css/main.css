@@ -168,40 +168,6 @@ header a {
   left: 180px;
 }
 
-#educationLink{
-
-}
-
-
-
-.educationMenuHidden{
-	display: none;
-}
-
-#educationLi{
-	max-height: 0px;
-	transition: max-height 0.2s ease-in;
-}
-
-
-.educationMenu{
-	margin: 0;
-	list-style: none;
-}
-
-.liShowing#educationLi {
-	max-height: 20px;
-	margin-top: 0;
-	margin-bottom: 6px;
-}
-
-.educationMenu > li > a {
-	text-decoration: none;
-	color: #000000;
-	font-weight: 300;
-	font-size: 16px;
-}
-
 
 /*     HAMBURGER end      */
 
@@ -260,7 +226,6 @@ header a {
 }
 
 #manual-site-container h1 {
-	margin-top: 70px;
 	line-height: 1.2;
 }
 
@@ -644,9 +609,10 @@ section {
 	margin: 5px 0px 10px 0px;
 }
 
-#eventmodal img {
+#eventmodal figure {
 	width: 100%;
-	height: 170px;
+	padding-top: 50%;
+	margin: 0;
 }
 
 #eventmodal h2 {
@@ -688,7 +654,7 @@ section {
 }
 
 #doneButton {
-	border: none;
+	border: none
 }
 
 #eventmodal.confirmation #eventContainer {
@@ -884,6 +850,8 @@ input[type="submit"] {
 #tab1{
 	text-align: center;
 	overflow: hidden;
+	max-width: 960px;
+	margin:auto;
 }
 
 h3.events_title {
@@ -906,7 +874,7 @@ h3.events_title {
 	margin-right:2%;
 	margin-bottom: 15px;
 	width: 96.5%;
-	box-shadow: 3px 5px 10px #888888;
+	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
 }
 
 
@@ -923,7 +891,7 @@ h3.events_title {
 	margin-right: 1.5%;
 	margin-bottom: 15px;
 	width: 96.5%;
-	box-shadow: 3px 5px 10px #888888;
+	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
 }
 
 
@@ -940,17 +908,19 @@ h3.events_title {
 .contentHolderBox > a > h3{
 	text-align: center;
 	font-size: 18px;
-	margin: 0 5px;
+	margin: 0px 0px 10px 0px;
 }
 
-.contentHolderBox > a > img {
+.contentHolderBox > a > figure {
 	width: 100%;
-	height: 110px;
+	padding-top: 50%;
+	margin:0;
 }
 
 .contentHolderBox > a > h4{
 	text-align: center;
-	margin: 5px 0;
+	margin: 0 0 0 0;
+	padding: 5px;
 }
 
 #tab2{
@@ -996,7 +966,7 @@ float: right;
 }
 #bread-crumbs p {
 	display: inline;
-	font-size: 12px;
+	font-size: 1em;
 	padding-left: 3px;
 }
 
@@ -1138,17 +1108,10 @@ footer {
 		padding-top: 100px;
 	}
 
-	#manual-site-container h1 {
-		margin-top: 100px;
-	}
-
 	.box {
 		height: 350px;
 	}
 
-	.tabs, #tab1, #tab2{
-		display: none;
-	}
 
 	.networkContent{
 		margin-top: 20px;
@@ -1225,11 +1188,6 @@ footer {
 
 	#newsletterP{
 		margin-bottom: 15px;
-	}
-
-
-	#weirdfooter{
-		margin-top:90px;
 	}
 
 	footer{
