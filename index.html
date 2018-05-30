@@ -163,7 +163,7 @@
 
                     <label>
                       City
-                      <input id="city" type="text" name="city" required="required" tabindex="-1"/>
+                      <input id="cityDr" type="text" name="city" required="required" tabindex="-1"/>
                       <div class="errormessage">
                         <p>Please type your city</p>
                       </div>
@@ -171,7 +171,7 @@
 
                     <label>
                       Workplace
-                      <input type="text" name="workplace" required="required" tabindex="-1"/>
+                      <input id="workplaceDr" type="text" name="workplace" required="required" tabindex="-1"/>
                       <div class="errormessage">
                         <p>Please type your Workplace</p>
                       </div>
@@ -193,7 +193,7 @@
 
                     <label>
                       City
-                      <input type="text" name="city" required="required" tabindex="-1"/>
+                      <input id="cityOther" type="text" name="city" required="required" tabindex="-1"/>
                       <div class="errormessage">
                         <p>Please type your city</p>
                       </div>
@@ -201,7 +201,7 @@
 
                     <label>
                       Workplace
-                      <input type="text" name="workplace" required="required" tabindex="-1"/>
+                      <input id="workplaceOther" type="text" name="workplace" required="required" tabindex="-1"/>
                       <div class="errormessage">
                         <p>Please type your Workplace</p>
                       </div>
@@ -221,8 +221,8 @@
                 <form id="form-three" novalidate="novalidate" action="accountHomePage.html">
 
                 <label>
-      						Username
-      						<input type="text" name="username" required="required" tabindex="-1"/>
+      						Username (email address)
+      						<input type="email" name="username" required="required" tabindex="-1"/>
                   <div class="errormessage">
                     <p>Please type your username</p>
                   </div>
@@ -243,6 +243,9 @@
                     <p>Please type your password again</p>
                   </div>
                 </label>
+
+                <input id="termsCheck" type="checkbox" name="" value="" required="required"><label class="checkboxLabel" id="terms">I agree on terms</label>
+                <input type="checkbox" name="" value=""><label class="checkboxLabel">I want newsletters</label>
 
                 <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
       					<input type="submit" value="Sign Up" class="button" tabindex="-1"/>

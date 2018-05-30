@@ -381,6 +381,10 @@ textarea {
 	color: #e00b0b;
 }
 
+label.error {
+	color: #e00b0b;
+}
+
 *[required].error + .errormessage {
 	max-height: 25px;
 }
@@ -686,6 +690,14 @@ form {
 	margin-top: 10px;
 }
 
+#form-three > input[type="checkbox"] {
+	margin-top: 10px;
+}
+
+.checkboxLabel {
+	margin-top: 10px;
+}
+
 label:nth-child(1) {
 	margin-top: 10px;
 }
@@ -979,7 +991,7 @@ footer {
 	padding: 5%;
 	font-size: 14px;
 	text-align: center;
-	margin-top: 80px;
+	/*margin-top: 80px;*/
 }
 
 /*     FOOTER end    */
