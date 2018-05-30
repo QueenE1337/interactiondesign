@@ -256,7 +256,8 @@ header a {
 }
 
 #manual-site-container {
-	padding: 15px 10px 15px 10px;
+	padding: 100px 10px 100px 10px;
+	max-width: 500px;
 }
 
 #manual-site-container h1 {
