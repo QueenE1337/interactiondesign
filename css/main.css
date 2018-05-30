@@ -93,18 +93,17 @@ header a {
 	white-space: nowrap;
 }
 
+
 #educationLink{
-
+	float: left;
 }
-
-
 
 .educationMenuHidden{
 	display: none;
 }
 
 #educationLi{
-	max-height: 0px;
+	margin-left: 40px;
 	transition: max-height 0.2s ease-in;
 }
 
@@ -112,12 +111,6 @@ header a {
 .educationMenu{
 	margin: 0;
 	list-style: none;
-}
-
-.liShowing#educationLi {
-	max-height: 20px;
-	margin-top: 0;
-	margin-bottom: 6px;
 }
 
 .educationMenu > li > a {
@@ -1187,6 +1180,9 @@ footer {
 		float: left;
 		width:25%;
 	}
+	ul.tabs{
+		visibility: hidden;
+	}
 
 }
 
@@ -1241,5 +1237,8 @@ footer {
 		padding: 3%;
 		margin-top: 40px;
 	}
-
+	h3.events_title{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
 }
