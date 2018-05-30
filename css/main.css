@@ -224,6 +224,7 @@ header a {
 	padding-top: 70px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
 
 	filter: blur(0px);
 	transition: filter 0.2s ease-out;
@@ -856,6 +857,7 @@ input[type="submit"] {
 .tabs{
 	margin: 0;
 	margin-top: 5px;
+	margin-bottom: 10px;
 	text-align: center;
 	width: 100%;
 	padding-left: 0;
@@ -872,7 +874,6 @@ input[type="submit"] {
 	clear: right;
 	padding: 5px 0;
 	background-color: #cecece;
-	border-radius: 8px 8px 0 0;
 }
 
 .tabs > a{
@@ -886,9 +887,13 @@ input[type="submit"] {
 
 .tabs > a.active > li{
 	padding: 6px 0;
+	/*background-color: #b2e5ff;*/
 	background-color: #ffffff;
 	font-weight: bold;
+	/*box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.3);*/
+
 	border-bottom-style: none;
+	border-left-style: none;
 }
 
 
@@ -1191,8 +1196,8 @@ footer {
 		float: left;
 		width:25%;
 	}
-	ul.tabs{
-		visibility: hidden;
+	ul.tabs, #tab1, #tab2{
+	display: none;
 	}
 
 }
@@ -1208,24 +1213,6 @@ footer {
 
 
 @media (min-width:1000px) {
-
-	/*#modal{
-		min-width: 600px;
-	}
-
-	#register{
-		min-width: 600px;
-	}
-
-	#eventmodal{
-		min-width: 600px;
-		min-height: 680px;
-	}*/
-
-	/*section#event2 {
-		padding-left: 80px;
-		padding-top: 100px;
-	}*/
 
 	#centeredButtons{
 		margin-bottom: 40px;
