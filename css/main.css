@@ -168,6 +168,40 @@ header a {
   left: 180px;
 }
 
+#educationLink{
+
+}
+
+
+
+.educationMenuHidden{
+	display: none;
+}
+
+#educationLi{
+	max-height: 0px;
+	transition: max-height 0.2s ease-in;
+}
+
+
+.educationMenu{
+	margin: 0;
+	list-style: none;
+}
+
+.liShowing#educationLi {
+	max-height: 20px;
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+.educationMenu > li > a {
+	text-decoration: none;
+	color: #000000;
+	font-weight: 300;
+	font-size: 16px;
+}
+
 
 /*     HAMBURGER end      */
 
@@ -226,6 +260,7 @@ header a {
 }
 
 #manual-site-container h1 {
+	margin-top: 70px;
 	line-height: 1.2;
 }
 
@@ -1104,6 +1139,10 @@ footer {
 		padding-top: 100px;
 	}
 
+	#manual-site-container h1 {
+		margin-top: 100px;
+	}
+
 	.box {
 		height: 350px;
 	}
@@ -1187,6 +1226,11 @@ footer {
 
 	#newsletterP{
 		margin-bottom: 15px;
+	}
+
+
+	#weirdfooter{
+		margin-top:90px;
 	}
 
 	footer{
