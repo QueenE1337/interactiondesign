@@ -37,6 +37,12 @@ $(document).ready(function() {
 		$("nav, #hamburger-button").removeClass("clicked");
 	});
 
+	$("a#educationLink").on("click", function(){
+		$(".educationMenuHidden, .educationMenu").toggleClass("educationMenuHidden educationMenu");
+		$("#educationLi").addClass("liShowing");
+		// $(".educationMenuHidden").removeClass("educationMenuHidden");
+	});
+
 
 
 	// CLOSE LOGIN MODAL ON CANCEL ( X )
@@ -70,7 +76,11 @@ $(document).ready(function() {
 	})
 
 	// CLOSE EVENT MODAL ON CANCEL ( X )
-	$(".modal-container, #eventmodal .cancel").on("click", function(e) {
+	$(".modal-container, #eventmodal .cancel, #eventmodal #doneButton").on("click", function(e) {
+		close(e);
+	});
+
+	function close(e){
 		e.preventDefault();
 
 		var fields = $("#loginform").find("*[required]");
@@ -90,7 +100,7 @@ $(document).ready(function() {
 			$("#eventmodal").removeClass("confirmation");
 			$(this).off(transEnd);
 		});
-	})
+	}
 
 
 	// but NOT on clicks in the modal (=prevent "bubbling")
