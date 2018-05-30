@@ -307,6 +307,8 @@ $("#form-one").submit( function(e) {
 
 });
 
+
+
 //FUNCTION compare the user information in the form with the json file
 function getUserInfo( firstname, lastname, json ) {
 
@@ -329,7 +331,6 @@ function getUserInfo( firstname, lastname, json ) {
 	}
 	return correctUser;
 }
-
 
 
 $("#form-two").submit( function(e) {
@@ -393,6 +394,22 @@ $("#form-two").submit( function(e) {
 		e.preventDefault();
 	} else {
 
+		var correctSV = null;
+
+		if (svnumber == correctUser.svnumber) {
+			var correctSV = userinfo;
+
+			$("#register").addClass("step3");
+			$("#register").removeClass("step2");
+			$("#register").removeClass("back-step2");
+			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+			$("#progressContainer").addClass("step3");
+
+			return correctSV;
+		}
+
+
+		/*
 		//Getting the json file to work with ajax.
 		$.ajax({
 			url: "js/users.json",
@@ -408,11 +425,12 @@ $("#form-two").submit( function(e) {
 		.fail(function( jqXHR, textStatus, errorThrown ) {
 			console.log(errorThrown);
 		});
+		*/
 
 		}
 });
 
-
+/*
 //FUNCTION compare the user information in the form with the json file
 function getSVInfo( svnumber, json ) {
 
@@ -436,6 +454,8 @@ function getSVInfo( svnumber, json ) {
 	}
 	return correctUser;
 }
+*/
+
 
 
 $("#form-three").submit( function(e) {
