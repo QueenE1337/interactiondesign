@@ -1180,6 +1180,9 @@ footer {
 		float: left;
 		width:25%;
 	}
+	ul.tabs{
+		visibility: hidden;
+	}
 
 }
 
@@ -1234,5 +1237,8 @@ footer {
 		padding: 3%;
 		margin-top: 40px;
 	}
-
+	h3.events_title{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
 }
