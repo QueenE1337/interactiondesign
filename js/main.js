@@ -37,6 +37,12 @@ $(document).ready(function() {
 		$("nav, #hamburger-button").removeClass("clicked");
 	});
 
+	$("a#educationLink").on("click", function(){
+		$(".educationMenuHidden, .educationMenu").toggleClass("educationMenuHidden educationMenu");
+		$("#educationLi").addClass("liShowing");
+		// $(".educationMenuHidden").removeClass("educationMenuHidden");
+	});
+
 
 
 	// CLOSE LOGIN MODAL ON CANCEL ( X )

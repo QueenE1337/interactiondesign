@@ -168,6 +168,40 @@ header a {
   left: 180px;
 }
 
+#educationLink{
+
+}
+
+
+
+.educationMenuHidden{
+	display: none;
+}
+
+#educationLi{
+	max-height: 0px;
+	transition: max-height 0.2s ease-in;
+}
+
+
+.educationMenu{
+	margin: 0;
+	list-style: none;
+}
+
+.liShowing#educationLi {
+	max-height: 20px;
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+.educationMenu > li > a {
+	text-decoration: none;
+	color: #000000;
+	font-weight: 300;
+	font-size: 16px;
+}
+
 
 /*     HAMBURGER end      */
 
