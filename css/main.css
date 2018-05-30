@@ -187,7 +187,7 @@ header a {
 /*      SITE CONTAINER start    */
 
 
-#site-container {
+#site-container, #manual-site-container {
 	max-width: 1000px;
 	padding-top: 70px;
 	margin: 0 auto;
@@ -215,10 +215,32 @@ header a {
 				opacity: 1;
 			}
 
-#site-container p {
+#site-container p, #manual-site-container p {
 	line-height: 1.5;
 	text-align: center;
 	font-weight: 300;
+}
+
+#manual-site-container {
+	padding: 15px 10px 15px 10px;
+}
+
+#manual-site-container h1 {
+	line-height: 1.2;
+}
+
+textarea {
+	width: 100%;
+	height: 100px;
+	border: 1px solid grey;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: 16px;
+	margin-top: 8px;
+}
+
+#manual-site-container form {
+	padding-top: 10px;
 }
 
 
@@ -594,6 +616,7 @@ section {
 
 #eventmodal h2 {
 	margin: 0px;
+	font-size: 22px;
 }
 
 #eventmodal .cancel {
@@ -608,10 +631,14 @@ section {
 	transition: left 0.2s ease-out;
 }
 
-#event {
+#event, #event2 {
 	width: 50%;
 	float: left;
 	padding: 20px;
+}
+
+#event2 > p{
+	width: 100%;
 }
 
 .event-button {
@@ -631,7 +658,7 @@ section {
 
 input[type="checkbox"] {
 	float: left;
-	margin-top: 12px;
+	margin-top: 4px;
 }
 
 input[type="checkbox"]+p {
@@ -957,8 +984,18 @@ footer {
 		min-width: 400px;
 	}
 
+	#eventmodal{
+		min-width: 400px;
+		min-height: 590px;
+	}
+
 	#register{
 		min-width: 400px;
+	}
+
+	section#event2 {
+		padding-left: 50px;
+		padding-top: 70px;
 	}
 
 	.boxContainer{
@@ -986,8 +1023,19 @@ footer {
 		min-width: 500px;
 	}
 
+	#eventmodal{
+		min-width: 500px;
+		min-height: 615px;
+
+	}
+
 	#register{
 		min-width: 500px;
+	}
+
+	section#event2 {
+		padding-left: 60px;
+		padding-top: 80px;
 	}
 
 	.box {
@@ -1107,6 +1155,16 @@ footer {
 
 	#register{
 		min-width: 600px;
+	}
+
+	#eventmodal{
+		min-width: 600px;
+		min-height: 680px;
+	}
+
+	section#event2 {
+		padding-left: 80px;
+		padding-top: 100px;
 	}
 
 	#centeredButtons{
