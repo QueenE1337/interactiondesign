@@ -20,7 +20,8 @@
 	"profession": "nurse",
 	"speciality": "general",
 	"email": null,
-	"phone": "0786564534"
+	"phone": "0786564534",
+	"svnumber": "123"
 },{
 	"firstName": "Alma",
 	"lastName": "Pedersen",
@@ -31,7 +32,8 @@
 	"profession": "medical secretary",
 	"speciality": "general",
 	"email": null,
-	"phone": "0789567890"
+	"phone": "0789567890",
+	"svnumber": "456"
 },{
 	"firstName": "Fredrik",
 	"lastName": "Hansson",
@@ -53,7 +55,8 @@
 	"profession": "student",
 	"speciality": "graphic design",
 	"email": null,
-	"phone": "0737655976"
+	"phone": "0737655976",
+	"svnumber": "789"
 },{
 	"firstName": "Martin",
 	"lastName": "Cronqvist",
@@ -64,7 +67,8 @@
 	"profession": "student",
 	"speciality": "graphic design",
 	"email": null,
-	"phone": "0730797075"
+	"phone": "0730797075",
+	"svnumber": "111"
 },{
 	"firstName": "Emma",
 	"lastName": "Rådhall",
@@ -75,7 +79,8 @@
 	"profession": "student",
 	"speciality": "graphic design",
 	"email": null,
-	"phone": "0722528052"
+	"phone": "0722528052",
+	"svnumber": "222"
 },{
 	"firstName": "Erik",
 	"lastName": "Ruiz Svensson",
@@ -86,5 +91,6 @@
 	"profession": "student",
 	"speciality": "graphic design",
 	"email": null,
-	"phone": "0723140816"
+	"phone": "0723140816",
+	"svnumber": "333"
 }]

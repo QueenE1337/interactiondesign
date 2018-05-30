@@ -1,5 +1,13 @@
 var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd";
 
+//Save all info from registration in global variables
+var firstname = $("#firstname").val();
+var lastname = $("#password").val();
+var svnumber = $("#svnumber").val();
+var cityOther = $("#cityOther").val();
+var workplaceOther = $("#workplaceOther").val();
+
+
 
 $(document).ready(function() {
 
@@ -251,6 +259,10 @@ $("#form-one").submit( function(e) {
 	var postform = true;
 	var formOneFields = $("#form-one").find("*[required]");
 
+	//Save all info from registration in global variables
+	var firstname = $("#firstname").val();
+	var lastname = $("#lastname").val();
+
 	formOneFields.removeClass("error");
 
 	formOneFields.each(function() {
@@ -270,20 +282,63 @@ $("#form-one").submit( function(e) {
 		}
 	});
 
+	//Getting the json file to work with ajax.
+	$.ajax({
+		url: "js/users.json",
+		dataType: "json"
+	})
+	.done(function(data) {
+		console.log("data: ", data);
+		var userInfo = getUserInfo( firstname, lastname, data );
+
+		console.log("userInfo: ", userInfo);
+
+	})
+	.fail(function( jqXHR, textStatus, errorThrown ) {
+		console.log(errorThrown);
+	});
+
+
 	if (!postform) {
 		e.preventDefault();
 	} else {
-		$("#register").removeClass("back-step1");
-		$("#register").addClass("step2");
-		$("#profession, #secondstep a").removeAttr("tabindex");
-	  $("#progressContainer").addClass("step2");
+		//WHAT SHOULD HAPPEN?
 	}
+
 });
+
+//FUNCTION compare the user information in the form with the json file
+function getUserInfo( firstname, lastname, json ) {
+
+	var correctUser = null;
+
+	for (var i = 0; i < json.length; i++) {
+		var userinfo = json[i];
+		//If theres a match: form username to json username && form password to json password
+		if ( firstname == userinfo.firstName && lastname == userinfo.lastName ) {
+			//Save that information in a new varible.
+			var correctUser = userinfo;
+
+			$("#register").removeClass("back-step1");
+			$("#register").addClass("step2");
+			$("#profession, #secondstep a").removeAttr("tabindex");
+			$("#progressContainer").addClass("step2");
+
+			break;
+		}
+	}
+	return correctUser;
+}
+
+
 
 $("#form-two").submit( function(e) {
 	e.preventDefault();
 	var postform = true;
 	var formTwoFields = $("#form-two").find("*[required]");
+
+	//Save all info from registration in global variables
+	var svnumber = $("#svnumber").val();
 
 	formTwoFields.removeClass("error");
 
@@ -333,16 +388,56 @@ $("#form-two").submit( function(e) {
 		}
 	});
 
+
 	if (!postform) {
 		e.preventDefault();
 	} else {
+
+		//Getting the json file to work with ajax.
+		$.ajax({
+			url: "js/users.json",
+			dataType: "json"
+		})
+		.done(function(data) {
+			console.log("data: ", data);
+			var userInfo = getSVInfo( svnumber, data );
+
+			console.log("userInfo: ", userInfo);
+
+		})
+		.fail(function( jqXHR, textStatus, errorThrown ) {
+			console.log(errorThrown);
+		});
+
+		}
+});
+
+
+//FUNCTION compare the user information in the form with the json file
+function getSVInfo( svnumber, json ) {
+
+	var correctUser = null;
+
+	for (var i = 0; i < json.length; i++) {
+		var userinfo = json[i];
+		//If theres a match: form username to json username && form password to json password
+		if ( svnumber == userinfo.svnumber ) {
+			//Save that information in a new varible.
+			var correctUser = userinfo;
+
 			$("#register").addClass("step3");
 			$("#register").removeClass("step2");
 			$("#register").removeClass("back-step2");
 			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
 			$("#progressContainer").addClass("step3");
+
+			break;
 		}
-});
+	}
+	return correctUser;
+}
+
+
 
 $("#form-three").submit( function(e) {
 	var postform = true;
@@ -376,6 +471,17 @@ $("#form-three").submit( function(e) {
 		e.preventDefault();
 	}
 });
+
+
+//PASSWORD - REPEAT...
+
+
+
+
+
+
+
+
 
 });
 
