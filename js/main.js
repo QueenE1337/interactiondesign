@@ -397,7 +397,6 @@ $("#form-two").submit( function(e) {
 
 	if (!postform) {
 		e.preventDefault();
-<<<<<<< HEAD
 	} else {
 
 		//Getting the json file to work with ajax.
@@ -444,11 +443,6 @@ function getSVInfo( svnumber, json ) {
 	return correctUser;
 }
 
-
-=======
-	}
-});
->>>>>>> origin/master
 
 $("#form-three").submit( function(e) {
 	var postform = true;
