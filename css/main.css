@@ -91,6 +91,10 @@ header a {
 	font-weight: 800;
 	font-size: 20px;
 	white-space: nowrap;
+	transition: 0.3s;
+}
+header a:hover{
+	color:#56879a;
 }
 
 
