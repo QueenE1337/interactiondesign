@@ -128,11 +128,11 @@
                 <label>
                   Profession
                   <select required="required" id="profession" tabindex="-1">
-                    <option value="Selectaprofession">Select a profession</option>
-                    <option value="Doctor">Doctor</option>
-                    <option value="Nurse">Nurse</option>
-                    <option value="Physiotherapist">Physiotherapist</option>
-                    <option value="themeaningoflife">The meaning of life</option>
+                    <option id="noProfession" value="Selectaprofession">Select a profession</option>
+                    <option id="doctor" value="Doctor">Doctor</option>
+                    <option class="other" value="Nurse">Nurse</option>
+                    <option class="other" value="Physiotherapist">Physiotherapist</option>
+                    <option class="other" value="themeaningoflife">The meaning of life</option>
                   </select>
                   <div class="errormessage">
                     <p>Please select a profession</p>
@@ -149,11 +149,11 @@
 
                     Speciality
                     <select required="required" id="speciality" tabindex="-1">
-                      <option id="noSpeciality">Select a speciality</option>
-                      <option value="Doctor">Diabetes</option>
-                      <option value="Nurse">Babies</option>
-                      <option value="Physiotherapist">Sex</option>
-                      <option value="themeaningoflife">Kidney</option>
+                      <option id="noSpecialityDr">Select a speciality</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Babies">Babies</option>
+                      <option value="Sex">Sex</option>
+                      <option value="Kidney">Kidney</option>
                     </select>
                     <div class="errormessage">
                       <p>Please select a speciality</p>
@@ -161,7 +161,7 @@
 
                     <label>
                       City
-                      <input type="text" name="city" required="required" tabindex="-1"/>
+                      <input id="city" type="text" name="city" required="required" tabindex="-1"/>
                       <div class="errormessage">
                         <p>Please type your city</p>
                       </div>
@@ -180,10 +180,10 @@
                     Speciality
                     <select required="required" id="specialityOther" tabindex="-1">
                       <option id="noSpecialityOther">Select a speciality</option>
-                      <option value="Doctor">Diabetes</option>
-                      <option value="Nurse">Babies</option>
-                      <option value="Physiotherapist">Sex</option>
-                      <option value="themeaningoflife">Kidney</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Babies">Babies</option>
+                      <option value="Sex">Sex</option>
+                      <option value="Kidney">Kidney</option>
                     </select>
                     <div class="errormessage">
                       <p>Please select a speciality</p>
