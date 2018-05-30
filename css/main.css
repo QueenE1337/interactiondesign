@@ -653,7 +653,7 @@ section {
 }
 
 #doneButton {
-	border: none;
+	border: none
 }
 
 #eventmodal.confirmation #eventContainer {
@@ -905,7 +905,7 @@ h3.events_title {
 .contentHolderBox > a > h3{
 	text-align: center;
 	font-size: 18px;
-	margin: 0 5px;
+	margin: 0px 0px 10px 0px;
 }
 
 .contentHolderBox > a > img {
@@ -915,7 +915,8 @@ h3.events_title {
 
 .contentHolderBox > a > h4{
 	text-align: center;
-	margin: 5px 0;
+	margin: 0 0 0 0;
+	padding: 5px;
 }
 
 #tab2{
