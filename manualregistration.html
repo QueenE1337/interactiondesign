@@ -72,7 +72,7 @@
 
         <label>
           Profession
-          <select required="required" id="profession">
+          <select required="required">
             <option value="Selectaprofession">Select a profession</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>
@@ -88,8 +88,8 @@
 
         <label>
           Speciality
-          <select required="required" id="speciality">
-            <option id="noSpeciality">Select a speciality</option>
+          <select required="required">
+            <option>Select a speciality</option>
             <option value="Doctor">Diabetes</option>
             <option value="Nurse">Babies</option>
             <option value="Physiotherapist">Sex</option>
@@ -119,209 +119,212 @@
     </div>
 
 
-  <div class="modal-container">
+    <div class="modal-container">
 
-    <div id="modal">
+      <div id="modal">
 
-      <h2>Log in</h2>
+        <h2>Log in</h2>
 
-      <form id="loginform" novalidate="novalidate" action="accountHomePage.html">
-        <label>
-          Username
-          <input id="nameLogIn" type="text" name="Name" required="required"/>
-          <div class="errormessage">
-            <p>Please enter your username</p>
-          </div>
-        </label>
+        <form id="loginform" novalidate="novalidate" action="accountHomePage.html">
+          <label>
+            Username
+            <input id="nameLogIn" type="text" name="Name" required="required"/>
+            <div class="errormessage">
+              <p>Please enter your username</p>
+            </div>
+          </label>
 
-        <label>
-          Password
-          <input type="password" name="Password" required="required"/>
-          <div class="errormessage">
-            <p>Please enter your password</p>
-          </div>
-        </label>
+          <label>
+            Password
+            <input type="password" name="Password" required="required"/>
+            <div class="errormessage">
+              <p>Please enter your password</p>
+            </div>
+          </label>
 
-        <input type="submit" value="LOG IN"/>
-      </form>
+          <input type="submit" value="LOG IN"/>
+        </form>
 
-      <p>Or <a href="#" class="openRegister">Register</a></p>
+        <p>Or <a href="#" class="openRegister">Register</a></p>
 
-      <a href="#" class="needHelp">Forgot your password?</a>
-      <a href="#" class="cancel">x</a>
-
-    </div>
-  </div>
-
-
-  <div class="register-container">
-    <div id="register">
-        <div id="inputContainer">
-
-          <section id="firststep">
-            <h2>Register</h2>
-            <form id="form-one" novalidate="novalidate">
-              <label>
-                Firstname
-                <input type="text" name="firstname" required="required" tabindex="-1"/>
-                <div class="errormessage">
-                  <p>Please type your first name</p>
-                </div>
-              </label>
-
-              <label>
-                Lastname
-                <input type="text" name="lastname" required="required" tabindex="-1"/>
-                <div class="errormessage">
-                  <p>Please type your last name</p>
-                </div>
-              </label>
-
-              <input type="submit" value="Next" class="button" id="to-step2" tabindex="-1"/>
-
-            </form>
-            </section>
-
-            <section id="secondstep">
-              <h2>Work</h2>
-
-              <form id="form-two" novalidate="novalidate">
-
-              <label>
-                Profession
-                <select required="required" id="profession" tabindex="-1">
-                  <option id="noProfession" value="Selectaprofession">Select a profession</option>
-                  <option id="doctor" value="Doctor">Doctor</option>
-                  <option class="other" value="Nurse">Nurse</option>
-                  <option class="other" value="Physiotherapist">Physiotherapist</option>
-                  <option class="other" value="themeaningoflife">The meaning of life</option>
-                </select>
-                <div class="errormessage">
-                  <p>Please select a profession</p>
-                </div>
-
-                <div class="doctor">
-                  <label>
-                    SV-number
-                    <input type="number" name="SV-number" required="required" tabindex="-1"/>
-                    <div class="errormessage">
-                      <p>Please type your SV-number</p>
-                    </div>
-                  </label>
-
-                  Speciality
-                  <select required="required" id="speciality" tabindex="-1">
-                    <option id="noSpecialityDr">Select a speciality</option>
-                    <option value="Diabetes">Diabetes</option>
-                    <option value="Babies">Babies</option>
-                    <option value="Sex">Sex</option>
-                    <option value="Kidney">Kidney</option>
-                  </select>
-                  <div class="errormessage">
-                    <p>Please select a speciality</p>
-                  </div>
-
-                  <label>
-                    City
-                    <input id="city" type="text" name="city" required="required" tabindex="-1"/>
-                    <div class="errormessage">
-                      <p>Please type your city</p>
-                    </div>
-                  </label>
-
-                  <label>
-                    Workplace
-                    <input type="text" name="workplace" required="required" tabindex="-1"/>
-                    <div class="errormessage">
-                      <p>Please type your Workplace</p>
-                    </div>
-                  </label>
-                </div>
-
-                <div class="other">
-                  Speciality
-                  <select required="required" id="specialityOther" tabindex="-1">
-                    <option id="noSpecialityOther">Select a speciality</option>
-                    <option value="Diabetes">Diabetes</option>
-                    <option value="Babies">Babies</option>
-                    <option value="Sex">Sex</option>
-                    <option value="Kidney">Kidney</option>
-                  </select>
-                  <div class="errormessage">
-                    <p>Please select a speciality</p>
-                  </div>
-
-                  <label>
-                    City
-                    <input type="text" name="city" required="required" tabindex="-1"/>
-                    <div class="errormessage">
-                      <p>Please type your city</p>
-                    </div>
-                  </label>
-
-                  <label>
-                    Workplace
-                    <input type="text" name="workplace" required="required" tabindex="-1"/>
-                    <div class="errormessage">
-                      <p>Please type your Workplace</p>
-                    </div>
-                  </label>
-                </div>
-
-                <a href="#" class="button" id="back-to-step1" tabindex="-1">← Back</a>
-                <input type="submit" value="Next" class="button" id="to-step3" tabindex="-1"/>
-              </label>
-
-            </form>
-            </section>
-
-            <section id="thirdstep">
-              <h2>User Info</h2>
-
-              <form id="form-three" novalidate="novalidate" action="accountHomePage.html">
-
-              <label>
-                Username
-                <input type="text" name="username" required="required" tabindex="-1"/>
-                <div class="errormessage">
-                  <p>Please type your username</p>
-                </div>
-              </label>
-
-              <label>
-                Password
-                <input type="password" name="passwordOne" required="required" tabindex="-1"/>
-                <div class="errormessage">
-                  <p>Please type your password</p>
-                </div>
-              </label>
-
-              <label>
-                Repeat password
-                <input type="password" name="passwordTwo" required="required" tabindex="-1"/>
-                <div class="errormessage">
-                  <p>Please type your password again</p>
-                </div>
-              </label>
-
-              <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
-              <input type="submit" value="Sign Up" class="button" tabindex="-1"/>
-            </section>
-          </form>
-
-        </div>
-        <a href="manualregistration.html" class="needHelp">Need help?</a>
+        <a href="#" class="needHelp">Forgot your password?</a>
         <a href="#" class="cancel">x</a>
 
-        <div id="progressContainer">
-          <div id=progressColor></div>
-          <div class=progressStep><p>1</p></div>
-          <div class=progressStep><p>2</p></div>
-          <div class=progressStep><p>3</p></div>
-        </div>
-
+      </div>
     </div>
-  </div>
+
+    <div class="register-container">
+      <div id="register">
+          <div id="inputContainer">
+
+            <section id="firststep">
+              <h2>Register</h2>
+              <form id="form-one" novalidate="novalidate">
+                <label>
+                  Firstname
+                  <input type="text" name="firstname" required="required" tabindex="-1"/>
+                  <div class="errormessage">
+                    <p>Please type your first name</p>
+                  </div>
+                </label>
+
+                <label>
+                  Lastname
+                  <input type="text" name="lastname" required="required" tabindex="-1"/>
+                  <div class="errormessage">
+                    <p>Please type your last name</p>
+                  </div>
+                </label>
+
+                <input type="submit" value="Next" class="button" id="to-step2" tabindex="-1"/>
+
+              </form>
+              </section>
+
+              <section id="secondstep">
+                <h2>Work</h2>
+
+                <form id="form-two" novalidate="novalidate">
+
+                <label>
+                  Profession
+                  <select required="required" id="profession" tabindex="-1">
+                    <option id="noProfession" value="Selectaprofession">Select a profession</option>
+                    <option id="doctor" value="Doctor">Doctor</option>
+                    <option class="other" value="Nurse">Nurse</option>
+                    <option class="other" value="Physiotherapist">Physiotherapist</option>
+                    <option class="other" value="themeaningoflife">The meaning of life</option>
+                  </select>
+                  <div class="errormessage">
+                    <p>Please select a profession</p>
+                  </div>
+
+                  <div class="doctor">
+                    <label>
+                      SV-number
+                      <input type="number" name="SV-number" required="required" tabindex="-1"/>
+                      <div class="errormessage">
+                        <p>Please type your SV-number</p>
+                      </div>
+                    </label>
+
+                    Speciality
+                    <select required="required" id="speciality" tabindex="-1">
+                      <option id="noSpecialityDr">Select a speciality</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Babies">Babies</option>
+                      <option value="Sex">Sex</option>
+                      <option value="Kidney">Kidney</option>
+                    </select>
+                    <div class="errormessage">
+                      <p>Please select a speciality</p>
+                    </div>
+
+                    <label>
+                      City
+                      <input id="cityDr" type="text" name="city" required="required" tabindex="-1"/>
+                      <div class="errormessage">
+                        <p>Please type your city</p>
+                      </div>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input id="workplaceDr" type="text" name="workplace" required="required" tabindex="-1"/>
+                      <div class="errormessage">
+                        <p>Please type your Workplace</p>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="other">
+                    Speciality
+                    <select required="required" id="specialityOther" tabindex="-1">
+                      <option id="noSpecialityOther">Select a speciality</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Babies">Babies</option>
+                      <option value="Sex">Sex</option>
+                      <option value="Kidney">Kidney</option>
+                    </select>
+                    <div class="errormessage">
+                      <p>Please select a speciality</p>
+                    </div>
+
+                    <label>
+                      City
+                      <input id="cityOther" type="text" name="city" required="required" tabindex="-1"/>
+                      <div class="errormessage">
+                        <p>Please type your city</p>
+                      </div>
+                    </label>
+
+                    <label>
+                      Workplace
+                      <input id="workplaceOther" type="text" name="workplace" required="required" tabindex="-1"/>
+                      <div class="errormessage">
+                        <p>Please type your Workplace</p>
+                      </div>
+                    </label>
+                  </div>
+
+                  <a href="#" class="button" id="back-to-step1" tabindex="-1">← Back</a>
+                  <input type="submit" value="Next" class="button" id="to-step3" tabindex="-1"/>
+                </label>
+
+              </form>
+              </section>
+
+              <section id="thirdstep">
+                <h2>User Info</h2>
+
+                <form id="form-three" novalidate="novalidate" action="accountHomePage.html">
+
+                <label>
+                  Username (email address)
+                  <input type="email" name="username" required="required" tabindex="-1"/>
+                  <div class="errormessage">
+                    <p>Please type your username</p>
+                  </div>
+                </label>
+
+                <label>
+                  Password
+                  <input type="password" name="passwordOne" required="required" tabindex="-1"/>
+                  <div class="errormessage">
+                    <p>Please type your password</p>
+                  </div>
+                </label>
+
+                <label>
+                  Repeat password
+                  <input type="password" name="passwordTwo" required="required" tabindex="-1"/>
+                  <div class="errormessage">
+                    <p>Please type your password again</p>
+                  </div>
+                </label>
+
+                <input id="termsCheck" type="checkbox" name="" value="" required="required"><label class="checkboxLabel" id="terms">I agree on terms</label>
+                <input type="checkbox" name="" value=""><label class="checkboxLabel">I want newsletters</label>
+
+                <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
+                <input type="submit" value="Sign Up" class="button" tabindex="-1"/>
+              </section>
+            </form>
+
+          </div>
+          <a href="manualregistration.html" class="needHelp">Need help?</a>
+          <a href="#" class="cancel">x</a>
+
+          <div id="progressContainer">
+            <div id=progressColor></div>
+            <div class=progressStep><p>1</p></div>
+            <div class=progressStep><p>2</p></div>
+            <div class=progressStep><p>3</p></div>
+          </div>
+
+      </div>
+    </div>
+
 
 
 
