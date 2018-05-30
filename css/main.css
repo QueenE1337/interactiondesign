@@ -93,31 +93,29 @@ header a {
 	white-space: nowrap;
 }
 
+
 #educationLink{
-
+	float: left;
 }
-
-
 
 .educationMenuHidden{
 	display: none;
+
 }
 
 #educationLi{
-	max-height: 0px;
+	max-height: 0;
+	margin-left: 40px;
 	transition: max-height 0.2s ease-in;
 }
 
-
-.educationMenu{
-	margin: 0;
-	list-style: none;
+.liShowing#educationLi{
+	max-height: 20px;
 }
 
-.liShowing#educationLi {
-	max-height: 20px;
+.educationMenu{
 	margin-top: 0;
-	margin-bottom: 6px;
+	list-style: none;
 }
 
 .educationMenu > li > a {
@@ -968,6 +966,7 @@ h3.events_title {
 	text-align: center;
 	margin: 0 0 0 0;
 	padding: 5px;
+	font-size: 14px;
 }
 
 #tab2{
@@ -1042,7 +1041,7 @@ footer {
 
 	#eventmodal{
 		min-width: 400px;
-		min-height: 590px;
+		min-height: 500px;
 	}
 
 	#register{
@@ -1076,22 +1075,22 @@ footer {
 @media (min-width:700px) {
 
 	#modal{
-		min-width: 500px;
+		min-width: 450px;
 	}
 
 	#eventmodal{
-		min-width: 500px;
-		min-height: 615px;
+		min-width: 450px;
+		min-height: 400px;
 
 	}
 
 	#register{
-		min-width: 500px;
+		min-width: 450px;
 	}
 
 	section#event2 {
-		padding-left: 60px;
-		padding-top: 80px;
+		padding-left: 30px;
+		padding-top: 40px;
 	}
 
 	.box {
@@ -1147,6 +1146,11 @@ footer {
 		margin-left: 0;
 	}
 
+	.educationMenu{
+		margin-top: 30px;
+		margin-left: -150px;
+	}
+
 	#hamburger-button{
 		display: none;
 	}
@@ -1187,6 +1191,9 @@ footer {
 		float: left;
 		width:25%;
 	}
+	ul.tabs{
+		visibility: hidden;
+	}
 
 }
 
@@ -1202,7 +1209,7 @@ footer {
 
 @media (min-width:1000px) {
 
-	#modal{
+	/*#modal{
 		min-width: 600px;
 	}
 
@@ -1213,12 +1220,12 @@ footer {
 	#eventmodal{
 		min-width: 600px;
 		min-height: 680px;
-	}
+	}*/
 
-	section#event2 {
+	/*section#event2 {
 		padding-left: 80px;
 		padding-top: 100px;
-	}
+	}*/
 
 	#centeredButtons{
 		margin-bottom: 40px;
@@ -1241,5 +1248,8 @@ footer {
 		padding: 3%;
 		margin-top: 40px;
 	}
-
+	h3.events_title{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
 }
