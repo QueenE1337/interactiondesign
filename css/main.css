@@ -100,16 +100,21 @@ header a {
 
 .educationMenuHidden{
 	display: none;
+
 }
 
 #educationLi{
+	max-height: 0;
 	margin-left: 40px;
 	transition: max-height 0.2s ease-in;
 }
 
+.liShowing#educationLi{
+	max-height: 20px;
+}
 
 .educationMenu{
-	margin: 0;
+	margin-top: 0;
 	list-style: none;
 }
 
@@ -1035,7 +1040,7 @@ footer {
 
 	#eventmodal{
 		min-width: 400px;
-		min-height: 590px;
+		min-height: 500px;
 	}
 
 	#register{
@@ -1069,22 +1074,22 @@ footer {
 @media (min-width:700px) {
 
 	#modal{
-		min-width: 500px;
+		min-width: 450px;
 	}
 
 	#eventmodal{
-		min-width: 500px;
-		min-height: 615px;
+		min-width: 450px;
+		min-height: 400px;
 
 	}
 
 	#register{
-		min-width: 500px;
+		min-width: 450px;
 	}
 
 	section#event2 {
-		padding-left: 60px;
-		padding-top: 80px;
+		padding-left: 30px;
+		padding-top: 40px;
 	}
 
 	.box {
@@ -1138,6 +1143,11 @@ footer {
 
 	header nav ul li:nth-child(1){
 		margin-left: 0;
+	}
+
+	.educationMenu{
+		margin-top: 30px;
+		margin-left: -150px;
 	}
 
 	#hamburger-button{
@@ -1195,7 +1205,7 @@ footer {
 
 @media (min-width:1000px) {
 
-	#modal{
+	/*#modal{
 		min-width: 600px;
 	}
 
@@ -1206,12 +1216,12 @@ footer {
 	#eventmodal{
 		min-width: 600px;
 		min-height: 680px;
-	}
+	}*/
 
-	section#event2 {
+	/*section#event2 {
 		padding-left: 80px;
 		padding-top: 100px;
-	}
+	}*/
 
 	#centeredButtons{
 		margin-bottom: 40px;
