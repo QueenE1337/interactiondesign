@@ -359,6 +359,10 @@ header a {
 	color: #e00b0b;
 }
 
+label.error {
+	color: #e00b0b;
+}
+
 *[required].error + .errormessage {
 	max-height: 25px;
 }
@@ -650,6 +654,14 @@ input[type="checkbox"]+p {
 
 form {
 	border-top: 2px solid #dbdbdb;
+	margin-top: 10px;
+}
+
+#form-three > input[type="checkbox"] {
+	margin-top: 10px;
+}
+
+.checkboxLabel {
 	margin-top: 10px;
 }
 

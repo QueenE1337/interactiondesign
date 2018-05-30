@@ -279,59 +279,59 @@ $("#form-two").submit( function(e) {
 
 	formTwoFields.each(function() {
 		var type = $(this).attr("type");
+		var id = $(this).attr("id");
 		var val = $(this).val();
 
 		if ($("#noProfession").is(':selected')) {
 				postform = false;
-				$(this).addClass("error");
+				$("#profession").addClass("error");
 		} else if ($("#doctor").is(':selected')) {
 			if (type == "number") {
 				if (val === undefined || val == null || val == "") {
 					postform = false;
 					$(this).addClass("error");
 				}
-			} else if (type == "text") {
+			} else if (type == "text" && id == "cityDr") {
 				if (val === undefined || val == null || val == "") {
 					postform = false;
 					$(this).addClass("error");
 				}
-			} else if ($("#noSpecialityDr").is(':selected')) {
+			} else if (type == "text" && id == "workplaceDr") {
+				if (val === undefined || val == null || val == "") {
+					postform = false;
+					$(this).addClass("error");
+				}
+			} else if (!$("#doctor").hasClass("error") && $("#noSpecialityDr").is(':selected')) {
 					postform = false;
 					$("#speciality").addClass("error");
 			}
-		}
-		if (!$("#profession").hasClass("error") && !$("#speciality").hasClass("error") && !$("#city").hasClass("error")){
-				$("#register").addClass("step3");
-				$("#register").removeClass("step2");
-				$("#register").removeClass("back-step2");
-				$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
-			  $("#progressContainer").addClass("step3");
-			}
-
-
-
-		if ($(".other").is(':selected')) {
-			if ($("#noSpecialityOther").is(':selected')) {
-					postform = false;
-					$("#specialityOther").addClass("error");
-			} else if (type == "text") {
+		} else if ($(".other").is(':selected')) {
+			if (type == "text" && id == "cityOther") {
 				if (val === undefined || val == null || val == "") {
 					postform = false;
 					$(this).addClass("error");
 				}
+			} else if (type == "text" && id == "workplaceOther") {
+				if (val === undefined || val == null || val == "") {
+					postform = false;
+					$(this).addClass("error");
+				}
+			} else if (!$(".other").hasClass("error") && $("#noSpecialityOther").is(':selected')) {
+					postform = false;
+					$("#specialityOther").addClass("error");
 			}
 		}
-		// else {
-		// 		$("#register").addClass("step3");
-		// 		$("#register").removeClass("step2");
-		// 		$("#register").removeClass("back-step2");
-		// 		$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
-		// 	}
 	});
 
 	if (!postform) {
 		e.preventDefault();
-	}
+	} else {
+			$("#register").addClass("step3");
+			$("#register").removeClass("step2");
+			$("#register").removeClass("back-step2");
+			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+			$("#progressContainer").addClass("step3");
+		}
 });
 
 $("#form-three").submit( function(e) {
@@ -339,13 +339,14 @@ $("#form-three").submit( function(e) {
 	var formThreeFields = $("#form-three").find("*[required]");
 
 	formThreeFields.removeClass("error");
+	$("#terms").removeClass("error");
 
 	formThreeFields.each(function() {
 		var type = $(this).attr("type");
 		var val = $(this).val();
 
-		if (type == "text") {
-			if (val === undefined || val == null || val == "") {
+		if (type == "email") {
+			if (!validateEmail(val)) {
 				postform = false;
 				$(this).addClass("error");
 			}
@@ -353,6 +354,11 @@ $("#form-three").submit( function(e) {
 			if (val === undefined || val == null || val == "") {
 				postform = false;
 				$(this).addClass("error");
+			}
+		} else if (type == "checkbox") {
+			if (!$('#termsCheck').is(':checked')) {
+				postform = false;
+				$("#terms").addClass("error");
 			}
 		}
 	});
