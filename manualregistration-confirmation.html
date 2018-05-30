@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Design Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/main.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  <body>
+
+    <header>
+
+        <h2 id="siteId">Pharmaceutical Inc.</h2>
+
+        <a id="hamburger-button" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="manualregistration.html">Manual Registration</a></li>
+            <li><a class="open-modal" href="#">Log in/register</a></li>
+          </ul>
+        </nav>
+
+    </header>
+
+
+
+    <div id="manual-site-container">
+
+      <h1>Confirmation Manual Registration</h1>
+      <p>You have now sent in a request for a manual registration.</p>
+      <p>You'll later get an email when the registration is done,
+      where you'll be able to login with username and password.</p>
+
+      <p>Get back to the <a href="index.html">startpage</a>.</p>
+
+    </div>
+
+
+    <footer>
+      <p>© 2018 PHARMACEUTICALINC.COM ALL RIGHTS RESERVED</p>
+    </footer>
+  </body>
+</html>
+
+
+<script>
+
+	document.getElementById("hamburger-button").addEventListener("click",function(){
+	document.getElementById("hamburger-button").classList.toggle("clicked");
+	document.querySelector("nav").classList.toggle("clicked");
+	});
+
+</script>
