@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Design Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/main.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  <body>
+
+    <header>
+
+        <h2 id="siteId">Pharmaceutical Inc.</h2>
+
+        <a id="hamburger-button" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="manualregistration.html">Manual Registration</a></li>
+            <li><a class="open-modal" href="#">Log in/register</a></li>
+          </ul>
+        </nav>
+
+    </header>
+
+
+
+    <div id="manual-site-container">
+
+      <h1>Manual Registration</h1>
+      <p>Don't get the registration to work? No worries, we can help you make
+        a manual registration!</p>
+      <p>The regular registration may not work because you're not in the database yet.</p>
+      <p>Please fill out the manual registration form and we will manually
+        validate your information. You'll later get an email when the registration is done,
+      where you'll be able to login with username and password.</p>
+      <p>But what do we really do? We'll check that the information is correct and add you to the database.
+      If the information is incorrect, we'll get back to you.</p>
+
+      <form action="manualregistration-confirmation.html">
+
+        <label>
+          Firstname
+          <input type="text" name="Firstname" required="required"/>
+        </label>
+
+        <label>
+          Lastname
+          <input type="text" name="Lastname" required="required"/>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="Email" required="required"/>
+        </label>
+
+        <label>
+          Phone number
+          <input type="number" name="Phone-number" required="required"/>
+        </label>
+
+        <label>
+          Profession
+          <select required="required" id="profession">
+            <option value="Selectaprofession">Select a profession</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Physiotherapist">Physiotherapist</option>
+            <option value="themeaningoflife">The meaning of life</option>
+          </select>
+        </label>
+
+        <label>
+          SV-number (if your a doctor)
+          <input type="number" name="SV-number"/>
+        </label>
+
+        <label>
+          Speciality
+          <select required="required" id="speciality">
+            <option id="noSpeciality">Select a speciality</option>
+            <option value="Doctor">Diabetes</option>
+            <option value="Nurse">Babies</option>
+            <option value="Physiotherapist">Sex</option>
+            <option value="themeaningoflife">Kidney</option>
+          </select>
+        </label>
+
+        <label>
+          City
+          <input type="text" name="city" required="required"/>
+        </label>
+
+        <label>
+          Workplace
+          <input type="text" name="workplace" required="required"/>
+        </label>
+
+        <label>
+          Message (optional)
+          <textarea></textarea>
+        </label>
+
+        <input type="submit" value="Submit Manual Registration" class="button"/>
+
+      </form>
+
+    </div>
+
+
+
+
+    <footer>
+      <p>© 2018 PHARMACEUTICALINC.COM ALL RIGHTS RESERVED</p>
+    </footer>
+  </body>
+</html>
+
+
+<script>
+
+	document.getElementById("hamburger-button").addEventListener("click",function(){
+	document.getElementById("hamburger-button").classList.toggle("clicked");
+	document.querySelector("nav").classList.toggle("clicked");
+	});
+
+</script>

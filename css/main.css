@@ -187,7 +187,7 @@ header a {
 /*      SITE CONTAINER start    */
 
 
-#site-container {
+#site-container, #manual-site-container {
 	max-width: 1000px;
 	padding-top: 70px;
 	margin: 0 auto;
@@ -215,10 +215,32 @@ header a {
 				opacity: 1;
 			}
 
-#site-container p {
+#site-container p, #manual-site-container p {
 	line-height: 1.5;
 	text-align: center;
 	font-weight: 300;
+}
+
+#manual-site-container {
+	padding: 80px 10px 15px 10px;
+}
+
+#manual-site-container h1 {
+	line-height: 1.2;
+}
+
+textarea {
+	width: 100%;
+	height: 100px;
+	border: 1px solid grey;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: 16px;
+	margin-top: 8px;
+}
+
+#manual-site-container form {
+	padding-top: 10px;
 }
 
 
@@ -593,6 +615,7 @@ section {
 
 #eventmodal h2 {
 	margin: 0px;
+	font-size: 22px;
 }
 
 #eventmodal .cancel {
