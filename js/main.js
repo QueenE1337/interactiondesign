@@ -106,6 +106,30 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
+
+	//REGISTRATION Back buttons
+
+	//BACK STEP TWO --> ONE
+	$("#back-to-step1").on("click", function(e) {
+	  e.preventDefault();
+
+	  $("#register").addClass("back-step1");
+	  $("#register").removeClass("step2");
+	  $("#register").removeClass("back-step2");
+	  $("#register").removeClass("step3");
+	  $("#progressContainer").removeClass("step2");
+	})
+
+	//BACK STEP THREE --> TWO
+	$("#back-to-step2").on("click", function(e) {
+	  e.preventDefault();
+
+	  $("#register").addClass("back-step2");
+	  $("#register").removeClass("step3");
+	  $("#progressContainer").removeClass("step3");
+	})
+
+
 // on change-event of <select>, do stuff:
 $("#profession").change(function() {
 
@@ -242,6 +266,7 @@ $("#form-one").submit( function(e) {
 		$("#register").removeClass("back-step1");
 		$("#register").addClass("step2");
 		$("#profession, #secondstep a").removeAttr("tabindex");
+	  $("#progressContainer").addClass("step2");
 	}
 });
 
@@ -249,16 +274,6 @@ $("#form-two").submit( function(e) {
 	e.preventDefault();
 	var postform = true;
 	var formTwoFields = $("#form-two").find("*[required]");
-
-	//BACK STEP TWO --> ONE
-	$("#back-to-step1").on("click", function(e) {
-		e.preventDefault();
-
-		$("#register").addClass("back-step1");
-		$("#register").removeClass("step2");
-		$("#register").removeClass("back-step2");
-		$("#register").removeClass("step3");
-	})
 
 	formTwoFields.removeClass("error");
 
@@ -290,6 +305,7 @@ $("#form-two").submit( function(e) {
 				$("#register").removeClass("step2");
 				$("#register").removeClass("back-step2");
 				$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+			  $("#progressContainer").addClass("step3");
 			}
 
 
@@ -321,13 +337,6 @@ $("#form-two").submit( function(e) {
 $("#form-three").submit( function(e) {
 	var postform = true;
 	var formThreeFields = $("#form-three").find("*[required]");
-
-	//BACK STEP THREE --> TWO
-	$("#back-to-step2").on("click", function(e) {
-		e.preventDefault();
-		$("#register").addClass("back-step2");
-		$("#register").removeClass("step3");
-	})
 
 	formThreeFields.removeClass("error");
 
