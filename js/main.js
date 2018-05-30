@@ -4,12 +4,12 @@ var transEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend 
 $(document).ready(function() {
 
 	setTimeout(function(){
-   $('#welcomemessage').addClass("showwelcome");// or fade, css display however you'd like.
+   $('#welcomemessage').addClass("showwelcome");
  }, 1000);
 
 	setTimeout(function(){
 		$('#welcomemessage').removeClass("showwelcome");
-   $('#welcomemessage').addClass("removewelcome");// or fade, css display however you'd like.
+   $('#welcomemessage').addClass("removewelcome");
  }, 4000);
 
 	// Open the login modal
@@ -107,56 +107,31 @@ $(document).ready(function() {
 	});
 
 
-	//REGISTRATION Next & Back buttons
-	//FROM STEP ONE --> TWO
-	$("#to-step2").on("click", function(e) {
-		e.preventDefault();
-
-		$("#register").removeClass("back-step1");
-		$("#register").addClass("step2");
-		$("#progressContainer").addClass("step2");
-
-		$("#profession, #secondstep a").removeAttr("tabindex");
-	})
-
-	//FROM STEP TWO --> THREE
-	$("#to-step3").on("click", function(e) {
-		e.preventDefault();
-
-		$("#register").addClass("step3");
-		$("#progressContainer").addClass("step3");
-
-		$("#register").removeClass("step2");
-		$("#register").removeClass("back-step2");
-
-		$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
-	})
+	//REGISTRATION Back buttons
 
 	//BACK STEP TWO --> ONE
 	$("#back-to-step1").on("click", function(e) {
-		e.preventDefault();
+	  e.preventDefault();
 
-		$("#register").addClass("back-step1");
-
-		$("#register").removeClass("step2");
-		$("#register").removeClass("back-step2");
-		$("#register").removeClass("step3");
-		$("#progressContainer").removeClass("step2");
+	  $("#register").addClass("back-step1");
+	  $("#register").removeClass("step2");
+	  $("#register").removeClass("back-step2");
+	  $("#register").removeClass("step3");
+	  $("#progressContainer").removeClass("step2");
 	})
 
 	//BACK STEP THREE --> TWO
 	$("#back-to-step2").on("click", function(e) {
-		e.preventDefault();
+	  e.preventDefault();
 
-		$("#register").addClass("back-step2");
-		$("#register").removeClass("step3");
-		$("#progressContainer").removeClass("step3");
+	  $("#register").addClass("back-step2");
+	  $("#register").removeClass("step3");
+	  $("#progressContainer").removeClass("step3");
 	})
 
 
-
-	// on change-event of <select>, do stuff:
-	$("#profession").change(function() {
+// on change-event of <select>, do stuff:
+$("#profession").change(function() {
 
 		// save the chosen value
 		var val = $(this).find("option:selected").attr("value");
@@ -261,36 +236,130 @@ $("#loginform").submit( function(e) {
 	}
 });
 
+$("#form-one").submit( function(e) {
+	e.preventDefault();
+	var postform = true;
+	var formOneFields = $("#form-one").find("*[required]");
 
-// $("#nameLogIn").on( function(e) {
-// 	var postform = true;
-// 	var fields = $("#nameLogIn")
-//
-// 	fields.removeClass("error");
-//
-//
-// 		var type = $(this).attr("type");
-//
-// 		if (type == "text") {
-// 			if (val === undefined || val == null || val == "") {
-// 				postform = false;
-// 				$(this).addClass("error");
-// 			}
-// 		}
-//
-// 	if (!postform) {
-// 		e.preventDefault();
-// 	}
-// });
+	formOneFields.removeClass("error");
+
+	formOneFields.each(function() {
+		var type = $(this).attr("type");
+		var val = $(this).val();
+
+		if (type == "text" && [name='firstname']) {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		} else if (type == "text" && [name='lastname']) {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		}
+	});
+
+	if (!postform) {
+		e.preventDefault();
+	} else {
+		$("#register").removeClass("back-step1");
+		$("#register").addClass("step2");
+		$("#profession, #secondstep a").removeAttr("tabindex");
+	  $("#progressContainer").addClass("step2");
+	}
+});
+
+$("#form-two").submit( function(e) {
+	e.preventDefault();
+	var postform = true;
+	var formTwoFields = $("#form-two").find("*[required]");
+
+	formTwoFields.removeClass("error");
+
+	formTwoFields.each(function() {
+		var type = $(this).attr("type");
+		var val = $(this).val();
+
+		if ($("#noProfession").is(':selected')) {
+				postform = false;
+				$(this).addClass("error");
+		} else if ($("#doctor").is(':selected')) {
+			if (type == "number") {
+				if (val === undefined || val == null || val == "") {
+					postform = false;
+					$(this).addClass("error");
+				}
+			} else if (type == "text") {
+				if (val === undefined || val == null || val == "") {
+					postform = false;
+					$(this).addClass("error");
+				}
+			} else if ($("#noSpecialityDr").is(':selected')) {
+					postform = false;
+					$("#speciality").addClass("error");
+			}
+		}
+		if (!$("#profession").hasClass("error") && !$("#speciality").hasClass("error") && !$("#city").hasClass("error")){
+				$("#register").addClass("step3");
+				$("#register").removeClass("step2");
+				$("#register").removeClass("back-step2");
+				$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+			  $("#progressContainer").addClass("step3");
+			}
 
 
-// $('#nameLogIn').focus(function() {
-// 	var input=$(this);
-// 	var is_name=input.val();
-// 	if(is_name){$(this).removeClass("error");}
-// 	else{$(this).addClass("error");}
-// });
 
+		if ($(".other").is(':selected')) {
+			if ($("#noSpecialityOther").is(':selected')) {
+					postform = false;
+					$("#specialityOther").addClass("error");
+			} else if (type == "text") {
+				if (val === undefined || val == null || val == "") {
+					postform = false;
+					$(this).addClass("error");
+				}
+			}
+		}
+		// else {
+		// 		$("#register").addClass("step3");
+		// 		$("#register").removeClass("step2");
+		// 		$("#register").removeClass("back-step2");
+		// 		$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
+		// 	}
+	});
+
+	if (!postform) {
+		e.preventDefault();
+	}
+});
+
+$("#form-three").submit( function(e) {
+	var postform = true;
+	var formThreeFields = $("#form-three").find("*[required]");
+
+	formThreeFields.removeClass("error");
+
+	formThreeFields.each(function() {
+		var type = $(this).attr("type");
+		var val = $(this).val();
+
+		if (type == "text") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		} else if (type == "password") {
+			if (val === undefined || val == null || val == "") {
+				postform = false;
+				$(this).addClass("error");
+			}
+		}
+	});
+	if (!postform) {
+		e.preventDefault();
+	}
+});
 
 });
 
