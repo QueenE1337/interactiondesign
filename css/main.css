@@ -652,6 +652,10 @@ section {
 	width: 40%;
 }
 
+#doneButton {
+	border: none;
+}
+
 #eventmodal.confirmation #eventContainer {
 	left: -100%;
 }
