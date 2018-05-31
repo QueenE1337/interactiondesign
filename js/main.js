@@ -7,6 +7,7 @@ var svnumber = $("#svnumber").val();
 var cityOther = $("#cityOther").val();
 var workplaceOther = $("#workplaceOther").val();
 
+var foundUser = null;
 
 
 $(document).ready(function() {
@@ -326,6 +327,7 @@ function getUserInfo( firstname, lastname, json ) {
 			$("#profession, #secondstep a").removeAttr("tabindex");
 			$("#progressContainer").addClass("step2");
 
+			foundUser = correctUser;
 			break;
 		}
 	}
@@ -396,8 +398,8 @@ $("#form-two").submit( function(e) {
 
 		var correctSV = null;
 
-		if (svnumber == correctUser.svnumber) {
-			var correctSV = userinfo;
+		if (foundUser != null && svnumber == foundUser.svnumber) {
+			//correctSV = userinfo;
 
 			$("#register").addClass("step3");
 			$("#register").removeClass("step2");
