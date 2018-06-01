@@ -14,7 +14,7 @@ html, body {
 
 h1 {
 	text-align:center;
-	margin-top: 4px;
+	margin-top: 25px;
 	margin-bottom: 4px;
 	line-height: 0.3;
 	font-weight: 700;
@@ -285,6 +285,10 @@ textarea {
 	padding-top: 10px;
 }
 
+#newsletterP {
+	padding: 0 10px 0 10px;
+}
+
 
 /*     SITE CONTAINER end      */
 
@@ -551,6 +555,102 @@ section {
 
 
 /*     REGISTER POP UP end     */
+
+
+/* 		REGISTER MESSAGE POPUP start		 */
+
+.register-message-container {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-out;
+
+	will-change: opacity;
+	transform: translateZ(0);
+}
+
+			body.register-message-showing {
+				overflow: hidden;
+			}
+
+			body.register-message-showing .register-message-container {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			body.register-message-showing #site-container {
+				filter: blur(10px);
+			}
+
+			body.register-message-showing.closing .register-message-container {
+				opacity: 0;
+			}
+			body.register-message-showing header {
+				opacity: 0;
+				display: none;
+			}
+			body.register-message-showing.closing header {
+				opacity: 1;
+			}
+
+			body.register-message-showing.closing #site-container {
+				filter: blur(0px);
+			}
+
+
+#register-message {
+	width: 300px;
+	height: 540px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+	position: relative;
+  top: 50%;
+  left: 50%;
+	z-index: 100
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+
+
+	transition: top 0.2s ease-out, transform 0.2s ease-out;
+
+	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
+	transform: translate(-50%, -50%)
+				translateZ(0)
+				scale(0.9)
+				rotateX(60deg);
+
+	/* Getting the GPU to handle it - the NEW way */
+	will-change: top, transform;
+}
+
+			body.register-message-showing .register-message-container #register-message {
+					top: 50%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(1) /* zoom in to scale 1:1 */
+					   	   	   rotateX(0);
+			}
+			body.register-message-showing.closing .register-message-container #register-message {
+					top: 45%;
+					transform: translate(-50%, -50%) /* keep trick for correct positioning */
+							   translateZ(0) /* Getting the GPU to handle it - the old way */
+							   scale(0.9) /* zoom in to scale 1:1 */
+					   	   	   rotateX(60deg);
+			}
+
+#register-message .cancel {
+	top: 0;
+}
+
+/* 		REGISTER MESSAGE POPUP end		 */
+
 
 /*     NEXT & BACK buttonzzz start     */
 
@@ -1077,6 +1177,10 @@ footer {
 		min-width: 400px;
 	}
 
+	#register-message{
+		min-width: 400px;
+	}
+
 	section#event2 {
 		padding-left: 50px;
 		padding-top: 70px;
@@ -1114,6 +1218,10 @@ footer {
 	}
 
 	#register{
+		min-width: 450px;
+	}
+
+	#register-message{
 		min-width: 450px;
 	}
 

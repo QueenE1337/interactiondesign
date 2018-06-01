@@ -86,6 +86,19 @@ $(document).ready(function() {
 		});
 	})
 
+	//REMOVING REGISTER-MESSAGE ON CANCEL ( X )
+	$(".register-message-container, #register-message .cancel").on("click", function(e) {
+		e.preventDefault();
+		$("body").addClass("closing");
+
+
+		$(".register-message-container #register-message").one(transEnd, function() {
+
+			$("body").removeClass("register-message-showing closing");
+			$(this).off(transEnd);
+		});
+	})
+
 	// CLOSE EVENT MODAL ON CANCEL ( X )
 	$(".modal-container, #eventmodal .cancel, #eventmodal #doneButton").on("click", function(e) {
 		close(e);
@@ -120,6 +133,10 @@ $(document).ready(function() {
 	});
 
 	$("#register").on("click", function(e) {
+		e.stopPropagation();
+	});
+
+	$("#register-message").on("click", function(e) {
 		e.stopPropagation();
 	});
 
@@ -305,7 +322,10 @@ $("#form-one").submit( function(e) {
 	if (!postform) {
 		e.preventDefault();
 	} else {
-		//WHAT SHOULD HAPPEN?
+		$("#register").removeClass("back-step1");
+		$("#register").addClass("step2");
+		$("#profession, #secondstep a").removeAttr("tabindex");
+		$("#progressContainer").addClass("step2");
 	}
 
 });
@@ -323,11 +343,6 @@ function getUserInfo( firstname, lastname, json ) {
 		if ( firstname == userinfo.firstName && lastname == userinfo.lastName ) {
 			//Save that information in a new varible.
 			var correctUser = userinfo;
-
-			$("#register").removeClass("back-step1");
-			$("#register").addClass("step2");
-			$("#profession, #secondstep a").removeAttr("tabindex");
-			$("#progressContainer").addClass("step2");
 
 			foundUser = correctUser;
 			break;
@@ -398,10 +413,6 @@ $("#form-two").submit( function(e) {
 		e.preventDefault();
 	} else {
 
-		var correctSV = null;
-
-		if (foundUser != null && svnumber == foundUser.svnumber) {
-			//correctSV = userinfo;
 
 			$("#register").addClass("step3");
 			$("#register").removeClass("step2");
@@ -409,8 +420,6 @@ $("#form-two").submit( function(e) {
 			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
 			$("#progressContainer").addClass("step3");
 
-			return correctSV;
-		}
 
 
 		/*
@@ -465,6 +474,8 @@ function getSVInfo( svnumber, json ) {
 $("#form-three").submit( function(e) {
 	var postform = true;
 	var formThreeFields = $("#form-three").find("*[required]");
+	var svnumber = $("#svnumber").val();
+	var correctSV = null;
 
 	formThreeFields.removeClass("error");
 	$("#terms").removeClass("error");
@@ -492,15 +503,18 @@ $("#form-three").submit( function(e) {
 	});
 	if (!postform) {
 		e.preventDefault();
+	} else if (foundUser != null && svnumber == foundUser.svnumber) {
+
+		return correctSV;
+	} else {
+		e.preventDefault();
+		$("body").addClass("register-message-showing");
+		$("body").removeClass("register-showing");
 	}
 });
 
 
 //PASSWORD - REPEAT...
-
-
-
-
 
 
 
