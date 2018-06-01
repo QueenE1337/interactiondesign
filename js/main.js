@@ -27,6 +27,7 @@ $(document).ready(function() {
 
 		$("body").addClass("modal-showing");
 		$("nav, #hamburger-button").removeClass("clicked");
+		$(".startpage-notab, .startpage-notab a").attr("tabindex", "-1");
 	});
 
 	// Open register pop-up on click
@@ -62,6 +63,7 @@ $(document).ready(function() {
 		fields.removeClass("error");
 
 		$("body").addClass("closing");
+		$(".startpage-notab, .startpage-notab a").removeAttr("tabindex"); 
 
 
 		$(".modal-container #modal").one(transEnd, function() {

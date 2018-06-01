@@ -15,7 +15,7 @@
 
         <h2 id="siteId">Pharmaceutical Inc.</h2>
 
-        <a id="hamburger-button" href="#">
+        <a id="hamburger-button" href="#" class="startpage-notab">
           <span></span>
           <span></span>
           <span></span>
@@ -23,7 +23,7 @@
         </a>
 
         <nav>
-          <ul>
+          <ul class="startpage-notab">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">About us</a></li>
@@ -42,7 +42,7 @@
 			<h1>Pharmaceutical Inc.</h1>
 			<p>We make medicine easy</p>
 
-      <a href="#" class="button big open-modal" id="centeredButtons">LOG IN</a>
+      <a href="#" class="button big open-modal startpage-notab" id="centeredButtons">LOG IN</a>
 
 			<h3>Latest News</h3>
 
@@ -55,7 +55,7 @@
 
 			<p id="newsletterP">Sign up to newsletters today! And don't forget, if you're logged in you'll be able to get even more juicy news.</p>
 
-      <a href="#" class="button" id="centeredButtons">I want newsletters!</a>
+      <a href="#" class="button startpage-notab" id="centeredButtons">I want newsletters!</a>
 
 		</div>
 
@@ -244,8 +244,8 @@
                   </div>
                 </label>
 
-                <input id="termsCheck" type="checkbox" name="" value="" required="required"><label class="checkboxLabel" id="terms">I agree on terms</label>
-                <input type="checkbox" name="" value=""><label class="checkboxLabel">I want newsletters</label>
+                <input id="termsCheck" type="checkbox" name="" value="" required="required" tabindex="-1"><label class="checkboxLabel" id="terms">I agree on terms</label>
+                <input type="checkbox" name="" value="" tabindex="-1"><label class="checkboxLabel">I want newsletters</label>
 
                 <a href="#" class="button" id="back-to-step2" tabindex="-1">← Back</a>
       					<input type="submit" value="Sign Up" class="button" tabindex="-1"/>
