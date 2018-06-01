@@ -238,6 +238,10 @@ header a:hover{
 	will-change: filter;
 }
 
+			body.modal-showing {
+				overflow: hidden;
+			}
+
 			body.modal-showing #site-container {
 				filter: blur(10px);
 			}
@@ -448,10 +452,19 @@ label.error {
 	transform: translateZ(0);
 }
 
+			body.register-showing {
+				overflow: hidden;
+			}
+
 			body.register-showing .register-container {
 				opacity: 1;
 				visibility: visible;
 			}
+
+			body.register-showing #site-container {
+				filter: blur(10px);
+			}
+
 			body.register-showing.closing .register-container {
 				opacity: 0;
 			}
@@ -462,6 +475,11 @@ label.error {
 			body.register-showing.closing header {
 				opacity: 1;
 			}
+
+			body.register-showing.closing #site-container {
+				filter: blur(0px);
+			}
+
 
 #register {
 	width: 300px;
