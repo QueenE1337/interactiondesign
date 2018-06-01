@@ -63,7 +63,7 @@ $(document).ready(function() {
 		fields.removeClass("error");
 
 		$("body").addClass("closing");
-		$(".startpage-notab, .startpage-notab a").removeAttr("tabindex"); 
+		$(".startpage-notab, .startpage-notab a").removeAttr("tabindex");
 
 
 		$(".modal-container #modal").one(transEnd, function() {
@@ -184,7 +184,7 @@ $("#profession").change(function() {
 		e.preventDefault();
 
 		$("#eventmodal").addClass("confirmation");
-		$("#event input").removeAttr('tabindex');
+		$("#event2 input, #event2 a").removeAttr('tabindex');
 	});
 
 
