@@ -170,7 +170,7 @@ $("#profession").change(function() {
 		}
 
 		// has the user shosen a option other than Doctor??
-		if ( val=="Nurse" || val=="Physiotherapist" || val=="themeaningoflife" ) {
+		if ( val=="Nurse" || val=="Physiotherapist" || val=="MedicalSecretary" ) {
 
 			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".other").addClass("show");
