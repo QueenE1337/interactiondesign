@@ -3,9 +3,11 @@
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 }
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -23,8 +25,6 @@ h1 {
 
 h2 {
 	font-weight: 500;
-
-
 }
 
 h3 {
@@ -33,7 +33,6 @@ h3 {
   text-align:center;
 	margin: 0;
 }
-
 
 /*     HEADER start      */
 
@@ -93,10 +92,10 @@ header a {
 	white-space: nowrap;
 	transition: 0.3s;
 }
+
 header a:hover{
 	color:#56879a;
 }
-
 
 #educationLink{
 	float: left;
@@ -104,7 +103,6 @@ header a:hover{
 
 .educationMenuHidden{
 	display: none;
-
 }
 
 #educationLi{
@@ -129,11 +127,9 @@ header a:hover{
 	font-size: 16px;
 }
 
-
 /*     HEADER end      */
 
 /*     HAMBURGER BUTTON start      */
-
 
 #hamburger-button {
   display: block;
@@ -204,24 +200,9 @@ header a:hover{
   left: 180px;
 }
 
-
 /*     HAMBURGER end      */
 
-/*      BUTTONS   */
-
-/*.big_button {
-	box-sizing: border-box;
-	margin: 0 ;
-	font-size: 25px;
-	width: 50%;
-}*/
-
-/*      BUTTONS end    */
-
-
-
 /*      SITE CONTAINER start    */
-
 
 #site-container, #manual-site-container {
 	max-width: 1000px;
@@ -229,32 +210,30 @@ header a:hover{
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-
 	filter: blur(0px);
 	transition: filter 0.2s ease-out;
 	-webkit-transition: -webkit-filter 0.2s ease-out;
-
 	transform: translateZ(0);
 	will-change: filter;
 }
 
-			body.modal-showing {
-				overflow: hidden;
-			}
+body.modal-showing {
+	overflow: hidden;
+}
 
-			body.modal-showing #site-container {
-				filter: blur(10px);
-			}
-			body.modal-showing header {
-				opacity: 0;
-				display: none;
-			}
-			body.modal-showing.closing #site-container {
-				filter: blur(0px);
-			}
-			body.modal-showing.closing header {
-				opacity: 1;
-			}
+body.modal-showing #site-container {
+	filter: blur(10px);
+}
+body.modal-showing header {
+	opacity: 0;
+	display: none;
+}
+body.modal-showing.closing #site-container {
+	filter: blur(0px);
+}
+body.modal-showing.closing header {
+	opacity: 1;
+}
 
 #site-container p, #manual-site-container p {
 	line-height: 1.5;
@@ -289,10 +268,7 @@ textarea {
 	padding: 0 10px 0 10px;
 }
 
-
 /*     SITE CONTAINER end      */
-
-
 
 /*     BOXES (news/events/e-learning) WITH INFORMATION start      */
 
@@ -312,10 +288,7 @@ textarea {
   border: 3px solid white;
 }
 
-
 /*     BOXES WITH INFORMATION end     */
-
-
 
 .button {
 	background: #0077b2;
@@ -334,7 +307,6 @@ textarea {
 	text-align: center;
 }
 
-
 /*     LOGIN MODAL start     */
 
 .modal-container {
@@ -344,22 +316,20 @@ textarea {
 	left: 0;
 	width: 100%;
 	height: 100%;
-
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease-out;
-
 	will-change: opacity;
 	transform: translateZ(0);
 }
 
-			body.modal-showing .modal-container {
-				opacity: 1;
-				visibility: visible;
-			}
-			body.modal-showing.closing .modal-container {
-				opacity: 0;
-			}
+body.modal-showing .modal-container {
+	opacity: 1;
+	visibility: visible;
+}
+body.modal-showing.closing .modal-container {
+	opacity: 0;
+}
 
 #modal {
 	min-width: 300px;
@@ -371,34 +341,31 @@ textarea {
   top: 50%;
   left: 50%;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-
-
 	transition: top 0.2s ease-out, transform 0.2s ease-out;
-
 	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
 	transform: translate(-50%, -50%)
 				translateZ(0)
 				scale(0.9)
 				rotateX(60deg);
-
 	/* Getting the GPU to handle it - the NEW way */
 	will-change: top, transform;
 }
 
-			body.modal-showing .modal-container #modal {
-					top: 50%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(1) /* zoom in to scale 1:1 */
-					   	   	   rotateX(0);
-			}
-			body.modal-showing.closing .modal-container #modal {
-					top: 45%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(0.9) /* zoom in to scale 1:1 */
-					   	   	   rotateX(60deg);
-			}
+body.modal-showing .modal-container #modal {
+		top: 50%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(1)
+		   	   	   	rotateX(0);
+}
+
+body.modal-showing.closing .modal-container #modal {
+		top: 45%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(0.9)
+		   	   	   	rotateX(60deg);
+}
 
 #modal img {
 	width: 20px;
@@ -437,7 +404,6 @@ label.error {
 
 /*     LOGIN MODAL end     */
 
-
 /*     REGISTER POP UP start     */
 
 .register-container {
@@ -447,43 +413,42 @@ label.error {
 	left: 0;
 	width: 100%;
 	height: 100%;
-
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease-out;
-
 	will-change: opacity;
 	transform: translateZ(0);
 }
 
-			body.register-showing {
-				overflow: hidden;
-			}
+body.register-showing {
+	overflow: hidden;
+}
 
-			body.register-showing .register-container {
-				opacity: 1;
-				visibility: visible;
-			}
+body.register-showing .register-container {
+	opacity: 1;
+	visibility: visible;
+}
 
-			body.register-showing #site-container {
-				filter: blur(10px);
-			}
+body.register-showing #site-container {
+	filter: blur(10px);
+}
 
-			body.register-showing.closing .register-container {
-				opacity: 0;
-			}
-			body.register-showing header {
-				opacity: 0;
-				display: none;
-			}
-			body.register-showing.closing header {
-				opacity: 1;
-			}
+body.register-showing.closing .register-container {
+	opacity: 0;
+}
 
-			body.register-showing.closing #site-container {
-				filter: blur(0px);
-			}
+body.register-showing header {
+	opacity: 0;
+	display: none;
+}
 
+body.register-showing.closing header {
+	opacity: 1;
+}
+
+body.register-showing.closing #site-container {
+	filter: blur(0px);
+}
 
 #register {
 	width: 300px;
@@ -497,35 +462,31 @@ label.error {
   left: 50%;
 	z-index: 100
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-
-
 	transition: top 0.2s ease-out, transform 0.2s ease-out;
-
 	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
 	transform: translate(-50%, -50%)
 				translateZ(0)
 				scale(0.9)
 				rotateX(60deg);
-
 	/* Getting the GPU to handle it - the NEW way */
 	will-change: top, transform;
 }
 
-			body.register-showing .register-container #register {
-					top: 50%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(1) /* zoom in to scale 1:1 */
-					   	   	   rotateX(0);
-			}
-			body.register-showing.closing .register-container #register {
-					top: 45%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(0.9) /* zoom in to scale 1:1 */
-					   	   	   rotateX(60deg);
-			}
+body.register-showing .register-container #register {
+		top: 50%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(1)
+		   	   	   	rotateX(0);
+}
 
+body.register-showing.closing .register-container #register {
+		top: 45%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(0.9)
+		   	   	   	rotateX(60deg);
+}
 
 #inputContainer {
 	width: 300%;
@@ -553,9 +514,7 @@ section {
 	margin: 0;
 }
 
-
 /*     REGISTER POP UP end     */
-
 
 /* 		REGISTER MESSAGE POPUP start		 */
 
@@ -566,43 +525,42 @@ section {
 	left: 0;
 	width: 100%;
 	height: 100%;
-
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease-out;
-
 	will-change: opacity;
 	transform: translateZ(0);
 }
 
-			body.register-message-showing {
-				overflow: hidden;
-			}
+body.register-message-showing {
+	overflow: hidden;
+}
 
-			body.register-message-showing .register-message-container {
-				opacity: 1;
-				visibility: visible;
-			}
+body.register-message-showing .register-message-container {
+	opacity: 1;
+	visibility: visible;
+}
 
-			body.register-message-showing #site-container {
-				filter: blur(10px);
-			}
+body.register-message-showing #site-container {
+	filter: blur(10px);
+}
 
-			body.register-message-showing.closing .register-message-container {
-				opacity: 0;
-			}
-			body.register-message-showing header {
-				opacity: 0;
-				display: none;
-			}
-			body.register-message-showing.closing header {
-				opacity: 1;
-			}
+body.register-message-showing.closing .register-message-container {
+	opacity: 0;
+}
 
-			body.register-message-showing.closing #site-container {
-				filter: blur(0px);
-			}
+body.register-message-showing header {
+	opacity: 0;
+	display: none;
+}
 
+body.register-message-showing.closing header {
+	opacity: 1;
+}
+
+body.register-message-showing.closing #site-container {
+	filter: blur(0px);
+}
 
 #register-message {
 	width: 300px;
@@ -616,41 +574,37 @@ section {
   left: 50%;
 	z-index: 100
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-
-
 	transition: top 0.2s ease-out, transform 0.2s ease-out;
-
 	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
 	transform: translate(-50%, -50%)
 				translateZ(0)
 				scale(0.9)
 				rotateX(60deg);
-
 	/* Getting the GPU to handle it - the NEW way */
 	will-change: top, transform;
 }
 
-			body.register-message-showing .register-message-container #register-message {
-					top: 50%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(1) /* zoom in to scale 1:1 */
-					   	   	   rotateX(0);
-			}
-			body.register-message-showing.closing .register-message-container #register-message {
-					top: 45%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(0.9) /* zoom in to scale 1:1 */
-					   	   	   rotateX(60deg);
-			}
+body.register-message-showing .register-message-container #register-message {
+		top: 50%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(1)
+		   	   	   	rotateX(0);
+}
+
+body.register-message-showing.closing .register-message-container #register-message {
+		top: 45%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(0.9)
+		   	   	   	rotateX(60deg);
+}
 
 #register-message .cancel {
 	top: 0;
 }
 
 /* 		REGISTER MESSAGE POPUP end		 */
-
 
 /*     NEXT & BACK buttonzzz start     */
 
@@ -671,7 +625,6 @@ section {
 }
 
 /*     NEXT & BACK buttonzzz end     */
-
 
 /*     PROCESS BAR start     */
 
@@ -719,9 +672,7 @@ section {
 	width: 100%;
 }
 
-
 /*     PROCESS BAR end     */
-
 
 /*     EVENT MODAL  start    */
 
@@ -735,34 +686,31 @@ section {
   top: 50%;
   left: 50%;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-
 	transition: top 0.2s ease-out, transform 0.2s ease-out;
-
 	box-shadow: 0 22px 55px rgba(0,0,0,0.5);
 	transform: translate(-50%, -50%)
 				translateZ(0)
 				scale(0.9)
 				rotateX(60deg);
-
 	/* Getting the GPU to handle it - the NEW way */
 	will-change: top, transform;
 }
 
-			body.modal-showing .modal-container #eventmodal {
-					top: 50%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(1) /* zoom in to scale 1:1 */
-					   	   	   rotateX(0);
-			}
-			body.modal-showing.closing .modal-container #eventmodal {
-					top: 45%;
-					transform: translate(-50%, -50%) /* keep trick for correct positioning */
-							   translateZ(0) /* Getting the GPU to handle it - the old way */
-							   scale(0.9) /* zoom in to scale 1:1 */
-					   	   	   rotateX(60deg);
-			}
+body.modal-showing .modal-container #eventmodal {
+		top: 50%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(1)
+		   	   	   	rotateX(0);
+}
 
+body.modal-showing.closing .modal-container #eventmodal {
+		top: 45%;
+		transform: translate(-50%, -50%)
+				   			translateZ(0)
+				   			scale(0.9)
+		   	   	   	rotateX(60deg);
+}
 
 #eventmodal h3 {
 	text-align: left;
@@ -836,7 +784,6 @@ input[type="checkbox"]+p {
 	text-align: left;
 }
 
-
 /*     EVENT MODAL  end    */
 
 /*     FORM DESIGN start     */
@@ -892,7 +839,6 @@ input[type="submit"] {
 
 /*     FORM DESIGN end     */
 
-
 /*     SELECTION IN DROP DOWN MENU start     */
 
 .doctor {
@@ -927,8 +873,6 @@ input[type="submit"] {
 
 /*     SELECTION IN DROP DOWN MENU end    */
 
-
-
 /*     CANCEL ( X ) BUTTON && NEED HELP??  start   */
 
 .cancel {
@@ -952,8 +896,7 @@ input[type="submit"] {
 
 /*     CANCEL ( X ) BUTTON && NEED HELP??  end     */
 
-
-/*accountHomePage*/
+/*			ACCOUNTHOMEPAGE			*/
 
 #welcomemessage {
 	background-color: rgba(178, 229, 255, 0.6);
@@ -1006,20 +949,13 @@ input[type="submit"] {
 	color: #000;
 }
 
-.tabs > a.active{
-}
-
 .tabs > a.active > li{
 	padding: 6px 0;
-	/*background-color: #b2e5ff;*/
 	background-color: #ffffff;
 	font-weight: bold;
-	/*box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.3);*/
-
 	border-bottom-style: none;
 	border-left-style: none;
 }
-
 
 #tab1{
 	text-align: center;
@@ -1034,13 +970,11 @@ h3.events_title {
 	margin-bottom: 10px;
 }
 
-
 /*Right column--------------------*/
 
 .columnRight{
 	width: 50%;
 	float: right;
-
 }
 
 .columnRight > .contentHolderBox{
@@ -1051,13 +985,11 @@ h3.events_title {
 	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
 }
 
-
 /*Left column--------------------*/
 
 .columnLeft{
 	width: 50%;
 	float: left;
-
 }
 
 .columnLeft > .contentHolderBox{
@@ -1067,7 +999,6 @@ h3.events_title {
 	width: 96.5%;
 	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
 }
-
 
 .contentHolderBox{
 	background-color: rgb(238, 238, 238);
@@ -1104,9 +1035,9 @@ h3.events_title {
 }
 
 .personalLinkList{
-padding: 0;
-width: 96.5%;
-margin: 0 auto;
+	padding: 0;
+	width: 96.5%;
+	margin: 0 auto;
 }
 
 .personalLinkList > a > li{
@@ -1122,9 +1053,9 @@ margin: 0 auto;
 }
 
 .personalLinkList > a > li > img{
-max-width: 22px;
-height: auto;
-float: right;
+	max-width: 22px;
+	height: auto;
+	float: right;
 }
 
 .samePage{
@@ -1136,16 +1067,16 @@ float: right;
 }
 
 /* BREADCRUMBS */
+
 #bread-crumbs {
 	 margin: 10px 0px 10px 30px;
 }
+
 #bread-crumbs p {
 	display: inline;
 	font-size: 1em;
 	padding-left: 3px;
 }
-
-
 
 /*     FOOTER start     */
 
@@ -1154,13 +1085,9 @@ footer {
 	padding: 5%;
 	font-size: 14px;
 	text-align: center;
-	/*margin-top: 80px;*/
 }
 
 /*     FOOTER end    */
-
-
-
 
 @media (min-width:500px) {
 
@@ -1243,13 +1170,11 @@ footer {
 		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
 	}
 
-
 	header > #siteId{
 		font-size: 30px;
 		margin-top: 15px;
 		margin-bottom: 10px;
 	}
-
 
 	header > nav {
 		background-color: inherit;
@@ -1300,7 +1225,6 @@ footer {
 		height: 350px;
 	}
 
-
 	.networkContent{
 		margin-top: 20px;
 		overflow: hidden;
@@ -1328,8 +1252,9 @@ footer {
 		float: left;
 		width:25%;
 	}
+
 	ul.tabs, #tab1, #tab2{
-	display: none;
+		display: none;
 	}
 
 }
@@ -1341,8 +1266,6 @@ footer {
 	}
 
 }
-
-
 
 @media (min-width:1000px) {
 

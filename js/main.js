@@ -6,9 +6,7 @@ var lastname = $("#password").val();
 var svnumber = $("#svnumber").val();
 var cityOther = $("#cityOther").val();
 var workplaceOther = $("#workplaceOther").val();
-
 var foundUser = null;
-
 
 $(document).ready(function() {
 
@@ -24,7 +22,6 @@ $(document).ready(function() {
 	// Open the login modal
 	$("a.open-modal").on("click", function(e) {
 		e.preventDefault();
-
 		$("body").addClass("modal-showing");
 		$("nav, #hamburger-button").removeClass("clicked");
 		$(".startpage-notab, .startpage-notab a").attr("tabindex", "-1");
@@ -33,7 +30,6 @@ $(document).ready(function() {
 	// Open register pop-up on click
 	$("a.openRegister").on("click", function(e) {
 		e.preventDefault();
-
 		$("body").addClass("register-showing");
 		$("body").removeClass("modal-showing");
 		$("#firststep input, #firststep a").removeAttr("tabindex");
@@ -42,7 +38,6 @@ $(document).ready(function() {
 	// Open the event modal
 	$("a.open-eventmodal").on("click", function(e) {
 		e.preventDefault();
-
 		$("body").addClass("modal-showing");
 		$("nav, #hamburger-button").removeClass("clicked");
 	});
@@ -50,10 +45,7 @@ $(document).ready(function() {
 	$("a#educationLink").on("click", function(){
 		$(".educationMenuHidden, .educationMenu").toggleClass("educationMenuHidden educationMenu");
 		$("#educationLi").addClass("liShowing");
-		// $(".educationMenuHidden").removeClass("educationMenuHidden");
 	});
-
-
 
 	// CLOSE LOGIN MODAL ON CANCEL ( X )
 	$(".modal-container, #modal .cancel").on("click", function(e) {
@@ -65,9 +57,7 @@ $(document).ready(function() {
 		$("body").addClass("closing");
 		$(".startpage-notab, .startpage-notab a").removeAttr("tabindex");
 
-
 		$(".modal-container #modal").one(transEnd, function() {
-
 			$("body").removeClass("modal-showing closing");
 			$(this).off(transEnd);
 		});
@@ -78,9 +68,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("body").addClass("closing");
 
-
 		$(".register-container #register").one(transEnd, function() {
-
 			$("body").removeClass("register-showing closing");
 			$(this).off(transEnd);
 		});
@@ -91,9 +79,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("body").addClass("closing");
 
-
 		$(".register-message-container #register-message").one(transEnd, function() {
-
 			$("body").removeClass("register-message-showing closing");
 			$(this).off(transEnd);
 		});
@@ -106,26 +92,20 @@ $(document).ready(function() {
 
 	function close(e){
 		e.preventDefault();
-
 		var fields = $("#loginform").find("*[required]");
 		fields.removeClass("error");
-
 		$("body").addClass("closing");
 
-
 		$(".modal-container #eventmodal").one(transEnd, function() {
-
 			$("body").removeClass("modal-showing closing");
 			$(this).off(transEnd);
 		});
 
 		$(".modal-container #eventmodal").one(transEnd, function() {
-
 			$("#eventmodal").removeClass("confirmation");
 			$(this).off(transEnd);
 		});
 	}
-
 
 	// but NOT on clicks in the modal (=prevent "bubbling")
 	$("#modal").on("click", function(e) {
@@ -144,13 +124,11 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
-
 	//REGISTRATION Back buttons
 
 	//BACK STEP TWO --> ONE
 	$("#back-to-step1").on("click", function(e) {
 	  e.preventDefault();
-
 	  $("#register").addClass("back-step1");
 	  $("#register").removeClass("step2");
 	  $("#register").removeClass("back-step2");
@@ -167,44 +145,28 @@ $(document).ready(function() {
 	  $("#progressContainer").removeClass("step3");
 	})
 
-
-// on change-event of <select>, do stuff:
 $("#profession").change(function() {
-
-		// save the chosen value
 		var val = $(this).find("option:selected").attr("value");
-
-		// clear "show"-class first to make sure a change from "student" to another option = additional fields are hidden again
 		$(".doctor").removeClass("show");
 		$(".other").removeClass("show");
 
-		// has the user shosen the option "Doctor"?
 		if ( val=="Doctor") {
-
-			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".doctor").addClass("show");
 			$(".doctor input, .doctor select, .doctor a").removeAttr("tabindex");
 		}
 
-		// has the user shosen a option other than Doctor??
 		if ( val=="Nurse" || val=="Physiotherapist" || val=="MedicalSecretary" ) {
-
-			// yes, add class "show" and let special CSS for this show the hidden fields
 			$(".other").addClass("show");
 			$(".other input, .other select, .other a").removeAttr("tabindex");
 		}
 	});
 
-
 	// SLIDING THE EVENT INFORMATION - TO CONFIRMATION:
 	$("a.event-button").on("click", function(e) {
 		e.preventDefault();
-
 		$("#eventmodal").addClass("confirmation");
 		$("#event2 input, #event2 a").removeAttr('tabindex');
 	});
-
-
 
 // FUNTIONALITY FOR THE TABS BELOW!!
 // ----------------------------------------------
@@ -310,14 +272,11 @@ $("#form-one").submit( function(e) {
 	.done(function(data) {
 		console.log("data: ", data);
 		var userInfo = getUserInfo( firstname, lastname, data );
-
 		console.log("userInfo: ", userInfo);
-
 	})
 	.fail(function( jqXHR, textStatus, errorThrown ) {
 		console.log(errorThrown);
 	});
-
 
 	if (!postform) {
 		e.preventDefault();
@@ -327,14 +286,10 @@ $("#form-one").submit( function(e) {
 		$("#profession, #secondstep a").removeAttr("tabindex");
 		$("#progressContainer").addClass("step2");
 	}
-
 });
-
-
 
 //FUNCTION compare the user information in the form with the json file
 function getUserInfo( firstname, lastname, json ) {
-
 	var correctUser = null;
 
 	for (var i = 0; i < json.length; i++) {
@@ -343,14 +298,12 @@ function getUserInfo( firstname, lastname, json ) {
 		if ( firstname == userinfo.firstName && lastname == userinfo.lastName ) {
 			//Save that information in a new varible.
 			var correctUser = userinfo;
-
 			foundUser = correctUser;
 			break;
 		}
 	}
 	return correctUser;
 }
-
 
 $("#form-two").submit( function(e) {
 	e.preventDefault();
@@ -359,7 +312,6 @@ $("#form-two").submit( function(e) {
 
 	//Save all info from registration in global variables
 	var svnumber = $("#svnumber").val();
-
 	formTwoFields.removeClass("error");
 
 	formTwoFields.each(function() {
@@ -408,68 +360,16 @@ $("#form-two").submit( function(e) {
 	}
 	});
 
-
 	if (!postform) {
 		e.preventDefault();
 	} else {
-
-
 			$("#register").addClass("step3");
 			$("#register").removeClass("step2");
 			$("#register").removeClass("back-step2");
 			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
 			$("#progressContainer").addClass("step3");
-
-
-
-		/*
-		//Getting the json file to work with ajax.
-		$.ajax({
-			url: "js/users.json",
-			dataType: "json"
-		})
-		.done(function(data) {
-			console.log("data: ", data);
-			var userInfo = getSVInfo( svnumber, data );
-
-			console.log("userInfo: ", userInfo);
-
-		})
-		.fail(function( jqXHR, textStatus, errorThrown ) {
-			console.log(errorThrown);
-		});
-		*/
-
 		}
 });
-
-/*
-//FUNCTION compare the user information in the form with the json file
-function getSVInfo( svnumber, json ) {
-
-	var correctUser = null;
-
-	for (var i = 0; i < json.length; i++) {
-		var userinfo = json[i];
-		//If theres a match: form username to json username && form password to json password
-		if ( svnumber == userinfo.svnumber ) {
-			//Save that information in a new varible.
-			var correctUser = userinfo;
-
-			$("#register").addClass("step3");
-			$("#register").removeClass("step2");
-			$("#register").removeClass("back-step2");
-			$("#thirdstep input, #thirdstep a").removeAttr("tabindex");
-			$("#progressContainer").addClass("step3");
-
-			break;
-		}
-	}
-	return correctUser;
-}
-*/
-
-
 
 $("#form-three").submit( function(e) {
 	var postform = true;
@@ -513,23 +413,9 @@ $("#form-three").submit( function(e) {
 	}
 });
 
-
-//PASSWORD - REPEAT...
-
-
-
-
-
 });
 
 function validateEmail(email) {
 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 return re.test(String(email).toLowerCase());
 }
-
-
-
-
-
-//Features man kan ta med om man orkar/vill som höjer kvalitén!
-//		+Hämta inloggade avnändarens förnamn och displaya det som "Welcome: + $username"; (AJAX)
